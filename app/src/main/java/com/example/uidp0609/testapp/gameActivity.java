@@ -56,6 +56,7 @@ public class gameActivity extends Activity {
                     }
 
                     public void onFinish() {
+                        //gaem over intent
                         //timerTextView.setText("done!");
                         //save score
                         //show game over screen with score
