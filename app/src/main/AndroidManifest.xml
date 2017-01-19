@@ -34,7 +34,10 @@
             android:name=".gameActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-        <activity android:name=".gameOverActivity"></activity>
+        <activity
+            android:name=".gameOverActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"/>
     </application>
 
 </manifest>

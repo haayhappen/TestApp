@@ -46,23 +46,20 @@ public class gameActivity extends Activity {
             @Override
             public void onClick(View v) {
                 changeScreenColor();
+                TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
+                textView_instructions.setVisibility(View.GONE);
                 //set what happens after start
                 View startbuttonview = findViewById(R.id.btn_start_game);
                 startbuttonview.setVisibility(View.GONE);
 
-                new CountDownTimer(60000, 1000) {
+                new CountDownTimer(10000, 1000) {
 
                     public void onTick(long millisUntilFinished) {
                         timerTextView.setText("" + millisUntilFinished / 1000);
                     }
 
                     public void onFinish() {
-                        Intent intent = new Intent(getApplicationContext(), gameOverActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                        Bundle b = new Bundle();
-                        b.putInt("gamescore", gamescore); //Your id
-                        intent.putExtras(b); //Put your id to your next Intent
-                        startActivity(intent);
+                        switchToGameOverScreen();
                         finish();
                         //gaem over intent
                         //timerTextView.setText("done!");
@@ -80,11 +77,12 @@ public class gameActivity extends Activity {
         redbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
-                textView_instructions.setText("Red pressed");
+                //TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
+                //textView_instructions.setText("Red pressed");
 
                 if (checkRedColor()) {
                     changeScreenColor();
+                    gamescore += 100;
                     //add score etc.
                 } else {
                     //TODO life - 1
@@ -98,12 +96,13 @@ public class gameActivity extends Activity {
         beigebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
-                textView_instructions.setText("Red pressed");
+               // TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
+               // textView_instructions.setText("Beige pressed");
 
                 if (checkBeigeColor()) {
                     changeScreenColor();
                     //add score etc.
+                    gamescore += 100;
                 } else {
                     //TODO life - 1
                     checkLifes();
@@ -115,11 +114,12 @@ public class gameActivity extends Activity {
         yellowbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
-                textView_instructions.setText("yellow pressed");
+               // TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
+               // textView_instructions.setText("yellow pressed");
 
                 if (checkYellowColor()) {
                     changeScreenColor();
+                    gamescore += 100;
                     //add score etc.
                 } else {
                     //TODO life - 1
@@ -132,11 +132,12 @@ public class gameActivity extends Activity {
         greenbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
-                textView_instructions.setText("green pressed");
+                //TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
+                //textView_instructions.setText("green pressed");
 
                 if (checkGreenColor()) {
                     changeScreenColor();
+                    gamescore += 100;
                     //add score etc.
                 } else {
                     //TODO life - 1
@@ -145,6 +146,15 @@ public class gameActivity extends Activity {
             }
         });
 
+    }
+
+    private void switchToGameOverScreen() {
+        Intent intent = new Intent(this, gameOverActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        Bundle b = new Bundle();
+        b.putInt("gamescore", gamescore); //Your id
+        intent.putExtras(b); //Put your id to your next Intent
+        startActivity(intent);
     }
 
     @Override

@@ -2,19 +2,53 @@ package com.example.uidp0609.testapp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class gameOverActivity extends Activity {
 
-    private int finalscore = 0;
+    private int finalScore = 0;
+    private Handler handler = new Handler();
+    private TextView finalScoreTextView;
+    private Button playagainbutton;
+    private Button backToMenuButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
 
+        Handler scoreHandler = new Handler();
+        scoreHandler.postDelayed(new Runnable()
+        {
+            public void run()
+            {
+                // Actions to do after 1 second
+                finalScoreTextView = (TextView) findViewById(R.id.finalscore);
+                finalScoreTextView.setText("Score");
+                finalScoreTextView.setVisibility(View.VISIBLE);
+            }
+        }, 1000);
+
+        Handler buttonHandler = new Handler();
+        buttonHandler.postDelayed(new Runnable()
+        {
+            public void run()
+            {
+                // Actions to do after 1 second
+                playagainbutton = (Button) findViewById(R.id.playagainbutton);
+                playagainbutton.setVisibility(View.VISIBLE);
+                backToMenuButton = (Button) findViewById(R.id.backtomenubutton);
+                backToMenuButton.setVisibility(View.VISIBLE);
+            }
+        }, 2000);
+
         Bundle b = getIntent().getExtras();
-        finalscore = b.getInt("gamescore");
+        finalScore = b.getInt("gamescore");
+
+        //finalScoreTextView = (TextView) findViewById(R.id.finalscore);
+        //finalScoreTextView.setText("TEST");
     }
-
-
 }
