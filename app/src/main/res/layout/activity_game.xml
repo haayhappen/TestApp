@@ -111,26 +111,27 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_start_game"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textview_instructions"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/button_style"
-        android:padding="20dp"
-        android:text="Start Game!"
-        android:textColor="#ffffff" />
-
     <TextView
         android:id="@+id/textview_instructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="165dp"
+        android:layout_marginTop="188dp"
         android:text="Hit the color you see as fast as you can!"
         android:textColor="@color/common_google_signin_btn_text_light_focused"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btn_start_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/button_style"
+        android:padding="20dp"
+        android:text="Start Game!"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/textview_instructions"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

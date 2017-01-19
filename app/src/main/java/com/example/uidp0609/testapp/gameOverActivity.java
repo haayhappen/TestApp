@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class gameOverActivity extends Activity {
 
-    private int score;
+    public int score;
     private TextView finalScoreTextView;
     private Button playagainbutton;
     private Button backToMenuButton;
@@ -99,5 +99,15 @@ public class gameOverActivity extends Activity {
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
         // Do something in response to button
+    }
+    public void onBackToMenuPressed(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
+        // Do something in response to button
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }
