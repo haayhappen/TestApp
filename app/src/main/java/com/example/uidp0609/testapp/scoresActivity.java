@@ -16,9 +16,16 @@ public class scoresActivity extends Activity {
     public void switchtohome(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         // Do something in response to button
     }
+    public void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0);
+    }
 
-
+    @Override
+    public void onBackPressed() {
+    }
 }
