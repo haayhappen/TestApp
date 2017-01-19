@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="logo_text">Buttons</string>
+    <string name="new_game_button_txt">New Game</string>
+    <string name="scores_button_txt">Scores</string>
+    <string name="player_name_txt">Player 1</string>
+    <string name="test_txt">HI there!</string>
+
+    <string name="title_activity_gamemode">gamemodeActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="choose_difficulty_txt">Choose Difficulty</string>
+    <string name="choose_gamemode_txt">Choose Gamemode</string>
+</resources>
