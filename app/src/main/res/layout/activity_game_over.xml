@@ -8,6 +8,66 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.uidp0609.testapp.gameOverActivity">
+    tools:context="com.example.uidp0609.testapp.gameOverActivity"
+    android:background="@drawable/gradient_background">
 
+    <TextView
+        android:text="Game Over!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="86dp"
+        android:id="@+id/tv_gameover"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="60sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Your final score is:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView8"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_below="@+id/tv_gameover"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="60sp"
+        android:layout_below="@+id/textView8"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
+        android:text="Play again!"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:layout_below="@+id/textView9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
+        android:text="Play again!"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:layout_below="@+id/button6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
 </RelativeLayout>

@@ -17,16 +17,20 @@ public class MainActivity extends Activity {
     //Define global Variables
     final Context context = this;
     private Button button;
+    public String playerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        //set playername out of sharedprefs
         button = (Button) findViewById(R.id.btn_playername);
-        SharedPreferences sharedPref = getSharedPreferences("playerInfo", Context.MODE_PRIVATE);
-        String playerName = sharedPref.getString("playerName", "");
+        SharedPreferences sharedPref = getSharedPreferences("playerName", Context.MODE_PRIVATE);
+        String playerName = sharedPref.getString("playerName", "Player 1");
         button.setText(playerName);
+        setPlayerName(playerName);
 
         // add button listener
         button.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +55,7 @@ public class MainActivity extends Activity {
                         button.setText(edittext.getText());
 
                         //save name
-                        SharedPreferences sharedPref = getSharedPreferences("playerInfo", Context.MODE_PRIVATE);
+                        SharedPreferences sharedPref = getSharedPreferences("playerName", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPref.edit();
                         editor.putString("playerName", edittext.getText().toString());
                         editor.apply();
@@ -67,6 +71,14 @@ public class MainActivity extends Activity {
 
     }
 
+
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
 
     /**
      * Called when the user clicks the new Game button

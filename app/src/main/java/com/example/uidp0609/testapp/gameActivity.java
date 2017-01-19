@@ -1,6 +1,7 @@
 package com.example.uidp0609.testapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -56,6 +57,13 @@ public class gameActivity extends Activity {
                     }
 
                     public void onFinish() {
+                        Intent intent = new Intent(getApplicationContext(), gameOverActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        Bundle b = new Bundle();
+                        b.putInt("gamescore", gamescore); //Your id
+                        intent.putExtras(b); //Put your id to your next Intent
+                        startActivity(intent);
+                        finish();
                         //gaem over intent
                         //timerTextView.setText("done!");
                         //save score
