@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -25,10 +27,11 @@ public class gameOverActivity extends Activity {
         {
             public void run()
             {
+                growAnim();
                 // Actions to do after 1 second
-                finalScoreTextView = (TextView) findViewById(R.id.finalscore);
-                finalScoreTextView.setText("Score");
-                finalScoreTextView.setVisibility(View.VISIBLE);
+                //finalScoreTextView = (TextView) findViewById(R.id.finalscore);
+                //finalScoreTextView.setText("Score");
+                //finalScoreTextView.setVisibility(View.VISIBLE);
             }
         }, 1000);
 
@@ -50,5 +53,18 @@ public class gameOverActivity extends Activity {
 
         //finalScoreTextView = (TextView) findViewById(R.id.finalscore);
         //finalScoreTextView.setText("TEST");
+    }
+
+    private void growAnim(){
+            Animation a = AnimationUtils.loadAnimation(this, R.anim.grow);
+            a.reset();
+        finalScoreTextView = (TextView) findViewById(R.id.finalscore);
+        finalScoreTextView.setVisibility(View.VISIBLE);
+        finalScoreTextView.clearAnimation();
+        finalScoreTextView.startAnimation(a);
+    }
+    public void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0);
     }
 }

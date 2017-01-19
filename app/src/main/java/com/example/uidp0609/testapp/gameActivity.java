@@ -52,7 +52,7 @@ public class gameActivity extends Activity {
                 View startbuttonview = findViewById(R.id.btn_start_game);
                 startbuttonview.setVisibility(View.GONE);
 
-                new CountDownTimer(10000, 1000) {
+                new CountDownTimer(5000, 1000) {
 
                     public void onTick(long millisUntilFinished) {
                         timerTextView.setText("" + millisUntilFinished / 1000);
@@ -61,10 +61,6 @@ public class gameActivity extends Activity {
                     public void onFinish() {
                         switchToGameOverScreen();
                         finish();
-                        //gaem over intent
-                        //timerTextView.setText("done!");
-                        //save score
-                        //show game over screen with score
                     }
 
                 }.start();
@@ -160,11 +156,11 @@ public class gameActivity extends Activity {
     @Override
     public void onBackPressed() {
     }
-
-    @Override
     public void onPause() {
         super.onPause();
+        overridePendingTransition(0, 0);
     }
+
 
 
     public void changeScreenColor() {

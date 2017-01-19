@@ -13,10 +13,10 @@
     tools:context="com.example.uidp0609.testapp.gamemodeActivity">
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/iconsbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_colors"
+        android:layout_below="@+id/colorsbutton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:background="@drawable/button_style"
@@ -30,7 +30,7 @@
         android:id="@+id/button10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button9"
+        android:layout_below="@+id/iconsbutton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:background="@drawable/button_style"
@@ -53,7 +53,7 @@
         android:textSize="35sp" />
 
     <Button
-        android:id="@+id/btn_colors"
+        android:id="@+id/colorsbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_style"
