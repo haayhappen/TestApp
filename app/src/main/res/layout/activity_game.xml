@@ -35,7 +35,7 @@
                 android:id="@+id/timerTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.44"
+                android:layout_weight="1.53"
                 android:text="30"
                 android:textColor="@color/common_google_signin_btn_text_light_focused" />
 
@@ -43,8 +43,16 @@
                 android:id="@+id/lifetextview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2.17"
+                android:layout_weight="0.27"
                 android:text="Lifes"
+                android:textColor="@color/common_google_signin_btn_text_light_focused" />
+
+            <TextView
+                android:id="@+id/lifestextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.37"
+                android:text="3"
                 android:textColor="@color/common_google_signin_btn_text_light_focused" />
 
             <TextView

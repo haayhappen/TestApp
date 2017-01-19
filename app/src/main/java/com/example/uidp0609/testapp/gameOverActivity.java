@@ -32,7 +32,7 @@ public class gameOverActivity extends Activity {
         score = b.getInt("gamescore");
 
         //setting preferences
-        SharedPreferences prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
+        SharedPreferences prefs = this.getSharedPreferences("scores", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("score", score);
         editor.commit();

@@ -15,21 +15,13 @@ import java.util.Timer;
 
 public class gameActivity extends Activity {
 
-    //view definitions
-    // private ImageView imgviewscreencolor = (ImageView) findViewById(R.id.screencolor); ;
-
     TextView timerTextView;
     int lastrandomused = 5;
     int random;
     int lifes = 3;
-    //Button definitions
-    private Button redbutton;
-    private Button beigebutton;
-    private Button yellowbutton;
-    private Button greenbutton;
     //counter definitions
     private int gamescore = 0;
-    private Timer timecounter;
+    CountDownTimer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +44,7 @@ public class gameActivity extends Activity {
                 View startbuttonview = findViewById(R.id.btn_start_game);
                 startbuttonview.setVisibility(View.GONE);
 
-                new CountDownTimer(5000, 1000) {
+               timer = new CountDownTimer(5000, 1000) {
 
                     public void onTick(long millisUntilFinished) {
                         timerTextView.setText("" + millisUntilFinished / 1000);
@@ -82,7 +74,7 @@ public class gameActivity extends Activity {
                     updateGameScore();
                     //add score etc.
                 } else {
-                    //TODO life - 1
+                    lifes -= 1;
                     checkLifes();
 
                 }
@@ -102,7 +94,7 @@ public class gameActivity extends Activity {
                     gamescore += 100;
                     updateGameScore();
                 } else {
-                    //TODO life - 1
+                    lifes -= 1;
                     checkLifes();
                 }
             }
@@ -121,7 +113,7 @@ public class gameActivity extends Activity {
                     //add score etc.
                     updateGameScore();
                 } else {
-                    //TODO life - 1
+                    lifes -= 1;
                     checkLifes();
                 }
             }
@@ -140,7 +132,7 @@ public class gameActivity extends Activity {
                     //add score etc.
                     updateGameScore();
                 } else {
-                    //TODO life - 1
+                    lifes -= 1;
                     checkLifes();
                 }
             }
@@ -155,6 +147,8 @@ public class gameActivity extends Activity {
         b.putInt("gamescore", gamescore); //Your id
         intent.putExtras(b); //Put your id to your next Intent
         startActivity(intent);
+        timer.cancel();
+        finish();
     }
 
     @Override
@@ -261,14 +255,14 @@ public class gameActivity extends Activity {
     }
 
     public void checkLifes() {
+        TextView lifestextview = (TextView) findViewById(R.id.lifestextview);
         if (lifes == 0) {
-            //EXIT GAME
-
-            //TODO link to gameover activity when lifes equals 0
-            //Intent intent = new Intent(this, gameOverActivity.class);
-            //startActivity(intent);
+            switchToGameOverScreen();
             finish();
+        }else {
+            lifestextview.setText(lifes+"");
         }
+
     }
 
     private int getRandom() {

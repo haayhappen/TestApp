@@ -1,9 +1,12 @@
 package com.example.uidp0609.testapp;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class scoresActivity extends Activity {
 
@@ -11,6 +14,11 @@ public class scoresActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scores);
+
+        TextView scoretextview = (TextView) findViewById(R.id.scoretextview);
+        SharedPreferences sharedPref = getSharedPreferences("scores", Context.MODE_PRIVATE);
+        int score = sharedPref.getInt("score",0);
+        scoretextview.setText(score+"");
     }
 
     public void switchtohome(View view) {
@@ -20,6 +28,17 @@ public class scoresActivity extends Activity {
         startActivity(intent);
         // Do something in response to button
     }
+
+    public void deletehighscore(View view) {
+        SharedPreferences prefs = this.getSharedPreferences("scores", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("score", 0);
+        editor.commit();
+        TextView scoretextview = (TextView) findViewById(R.id.scoretextview);
+        scoretextview.setText(0+"");
+        // Do something in response to button
+    }
+
     public void onPause() {
         super.onPause();
         overridePendingTransition(0, 0);
