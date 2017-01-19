@@ -46,7 +46,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="26dp"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:onClick="onPlayAgainPressed" />
 
     <Button
         android:id="@+id/backtomenubutton"

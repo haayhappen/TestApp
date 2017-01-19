@@ -79,6 +79,7 @@ public class gameActivity extends Activity {
                 if (checkRedColor()) {
                     changeScreenColor();
                     gamescore += 100;
+                    updateGameScore();
                     //add score etc.
                 } else {
                     //TODO life - 1
@@ -99,6 +100,7 @@ public class gameActivity extends Activity {
                     changeScreenColor();
                     //add score etc.
                     gamescore += 100;
+                    updateGameScore();
                 } else {
                     //TODO life - 1
                     checkLifes();
@@ -117,6 +119,7 @@ public class gameActivity extends Activity {
                     changeScreenColor();
                     gamescore += 100;
                     //add score etc.
+                    updateGameScore();
                 } else {
                     //TODO life - 1
                     checkLifes();
@@ -135,6 +138,7 @@ public class gameActivity extends Activity {
                     changeScreenColor();
                     gamescore += 100;
                     //add score etc.
+                    updateGameScore();
                 } else {
                     //TODO life - 1
                     checkLifes();
@@ -156,12 +160,11 @@ public class gameActivity extends Activity {
     @Override
     public void onBackPressed() {
     }
+    @Override
     public void onPause() {
         super.onPause();
         overridePendingTransition(0, 0);
     }
-
-
 
     public void changeScreenColor() {
 
@@ -171,15 +174,6 @@ public class gameActivity extends Activity {
         int beigeColor = ContextCompat.getColor(getApplicationContext(), R.color.colorBeige);
         int yellowColor = ContextCompat.getColor(getApplicationContext(), R.color.colorYellow);
         int greenColor = ContextCompat.getColor(getApplicationContext(), R.color.colorGreen);
-/*
-        int sdk = android.os.Build.VERSION.SDK_INT;
-        if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-            imgviewscreencolor.setBackgroundDrawable(redColor);
-        } else {
-            setBackground();
-        }
-
-        */
 
         random = getRandom();
 
@@ -264,7 +258,6 @@ public class gameActivity extends Activity {
         } catch (Exception ex) {
             //Hack users facebook, whatsapp and gmail account because it shouldfucking work
         }
-
     }
 
     public void checkLifes() {
@@ -276,7 +269,6 @@ public class gameActivity extends Activity {
             //startActivity(intent);
             finish();
         }
-
     }
 
     private int getRandom() {
@@ -284,8 +276,6 @@ public class gameActivity extends Activity {
         Random random = new Random();
         return random.nextInt(4);
     }
-
-
 }
 
 
