@@ -1,4 +1,4 @@
-package com.example.uidp0609.testapp;
+package com.ellophantdesign.haayhappen.Buttons;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,8 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.uidp0609.testapp.util.IabHelper;
-import com.example.uidp0609.testapp.util.IabResult;
+import com.ellophantdesign.haayhappen.Buttons.util.IabHelper;
+import com.ellophantdesign.haayhappen.Buttons.util.IabResult;
 
 public class gamemodeActivity extends Activity {
 
@@ -18,7 +18,7 @@ public class gamemodeActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.haayhappen.uidp0609.testapp.R.layout.activity_gamemode);
+        setContentView(R.layout.activity_gamemode);
 
         //String base64EncodedPublicKey;
         String base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxbFAytjwAvYPNkhjbkvqAWpv9Wuy23otQzrLoTrqv3+aAyOc/io0yeMwGOdufDlOF/CTgxvgYDEgBb3swD/hygwuwKr5FnqoGnJWwQuzIZzmFQtT9CfTi4U/45wBiaa8uGuQPXW3kE/3kbtU" + GetMiddleBit() + "U1bEyu1Fx6srZHxe43G0qxeqrhwL1y3e+ccKT+o3HRJs5vDpf+VZHTUP1KU/fj/vZdX6hMO7fP2fILth+iRD7njEB5qwIh0vJVx1iBvwIDAQAB";

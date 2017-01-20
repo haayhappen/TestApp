@@ -1,4 +1,4 @@
-package com.example.uidp0609.testapp;
+package com.ellophantdesign.haayhappen.Buttons;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

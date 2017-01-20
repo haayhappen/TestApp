@@ -1,4 +1,4 @@
-package com.example.uidp0609.testapp;
+package com.ellophantdesign.haayhappen.Buttons;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -24,11 +24,11 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.haayhappen.uidp0609.testapp.R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
 
         //set playername out of sharedprefs
-        button = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.btn_playername);
+        button = (Button) findViewById(R.id.btn_playername);
         SharedPreferences sharedPref = getSharedPreferences("playerName", Context.MODE_PRIVATE);
         String playerName = sharedPref.getString("playerName", "Player 1");
         button.setText(playerName);
@@ -43,11 +43,11 @@ public class MainActivity extends Activity {
                 // custom dialog
                 final Dialog dialog = new Dialog(context);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(com.haayhappen.uidp0609.testapp.R.layout.custom_dialog);
+                dialog.setContentView(R.layout.custom_dialog);
 
-                final EditText edittext = (EditText) dialog.findViewById(com.haayhappen.uidp0609.testapp.R.id.editText);
+                final EditText edittext = (EditText) dialog.findViewById(R.id.editText);
                 edittext.setText(button.getText());
-                Button dialogButton = (Button) dialog.findViewById(com.haayhappen.uidp0609.testapp.R.id.dialogButtonOK);
+                Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
                 // if button is clicked, close the custom dialog
 
                 dialogButton.setOnClickListener(new View.OnClickListener() {

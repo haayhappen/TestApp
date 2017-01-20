@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package com.example.uidp0609.testapp.util;
+package com.ellophantdesign.haayhappen.Buttons.util;
 
 /**
  * Represents the result of an in-app billing operation.

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package com.example.uidp0609.testapp.util;
+package com.ellophantdesign.haayhappen.Buttons.util;
 
 import android.text.TextUtils;
 import android.util.Base64;

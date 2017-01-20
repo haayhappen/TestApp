@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.uidp0609.testapp">
+    package="com.ellophantdesign.haayhappen.Buttons">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.ellophantdesign.haayhappen.Buttons.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
             <intent-filter>
@@ -20,27 +20,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".difficultyActivity"
+            android:name="com.ellophantdesign.haayhappen.Buttons.difficultyActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity
-            android:name=".gamemodeActivity"
+            android:name="com.ellophantdesign.haayhappen.Buttons.gamemodeActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity
-            android:name=".scoresActivity"
+            android:name="com.ellophantdesign.haayhappen.Buttons.scoresActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity
-            android:name=".gameActivity"
+            android:name="com.ellophantdesign.haayhappen.Buttons.gameActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity
-            android:name=".gameOverActivity"
+            android:name="com.ellophantdesign.haayhappen.Buttons.gameOverActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"/>
         <activity
-            android:name=".icongameActivity"
+            android:name="com.ellophantdesign.haayhappen.Buttons.icongameActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
     </application>

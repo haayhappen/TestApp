@@ -4,7 +4,7 @@
     android:id="@+id/activity_game"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.uidp0609.testapp.gameActivity">
+    tools:context="com.ellophantdesign.haayhappen.Buttons.gameActivity">
 
 
     <!--Text in the middle of the screen: "Hit the color you see as fast as you can!"-->

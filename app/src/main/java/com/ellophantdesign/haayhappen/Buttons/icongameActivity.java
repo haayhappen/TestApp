@@ -1,4 +1,4 @@
-package com.example.uidp0609.testapp;
+package com.ellophantdesign.haayhappen.Buttons;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,11 +25,11 @@ public class icongameActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.haayhappen.uidp0609.testapp.R.layout.activity_game);
+        setContentView(R.layout.activity_game);
 
-        timerTextView = (TextView) findViewById(com.haayhappen.uidp0609.testapp.R.id.timerTextView);
+        timerTextView = (TextView) findViewById(R.id.timerTextView);
 
-        final Button startbutton = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.btn_start_game);
+        final Button startbutton = (Button) findViewById(R.id.btn_start_game);
 
         startbutton.setText("Start Game!");
         startbutton.setOnClickListener(new View.OnClickListener() {
@@ -37,10 +37,10 @@ public class icongameActivity extends Activity {
             @Override
             public void onClick(View v) {
                 changeScreenColor();
-                TextView textView_instructions = (TextView) findViewById(com.haayhappen.uidp0609.testapp.R.id.textview_instructions);
+                TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
                 textView_instructions.setVisibility(View.GONE);
                 //set what happens after start
-                View startbuttonview = findViewById(com.haayhappen.uidp0609.testapp.R.id.btn_start_game);
+                View startbuttonview = findViewById(R.id.btn_start_game);
                 startbuttonview.setVisibility(View.GONE);
 
                 timer = new CountDownTimer(5000, 1000) {
@@ -60,7 +60,7 @@ public class icongameActivity extends Activity {
         });
 
 
-        Button redbutton = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.btn_red);
+        Button redbutton = (Button) findViewById(R.id.btn_red);
         redbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +80,7 @@ public class icongameActivity extends Activity {
             }
         });
 
-        Button beigebutton = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.btn_beige);
+        Button beigebutton = (Button) findViewById(R.id.btn_beige);
         beigebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,7 +99,7 @@ public class icongameActivity extends Activity {
             }
         });
 
-        Button yellowbutton = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.btn_yellow);
+        Button yellowbutton = (Button) findViewById(R.id.btn_yellow);
         yellowbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +118,7 @@ public class icongameActivity extends Activity {
             }
         });
 
-        Button greenbutton = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.btn_green);
+        Button greenbutton = (Button) findViewById(R.id.btn_green);
         greenbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,11 +162,11 @@ public class icongameActivity extends Activity {
 
     public void changeScreenColor() {
 
-        Button screencolor = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.screencolor);
-        int redColor = ContextCompat.getColor(getApplicationContext(), com.haayhappen.uidp0609.testapp.R.color.colorRed);
-        int beigeColor = ContextCompat.getColor(getApplicationContext(), com.haayhappen.uidp0609.testapp.R.color.colorBeige);
-        int yellowColor = ContextCompat.getColor(getApplicationContext(), com.haayhappen.uidp0609.testapp.R.color.colorYellow);
-        int greenColor = ContextCompat.getColor(getApplicationContext(), com.haayhappen.uidp0609.testapp.R.color.colorGreen);
+        Button screencolor = (Button) findViewById(R.id.screencolor);
+        int redColor = ContextCompat.getColor(getApplicationContext(), R.color.colorRed);
+        int beigeColor = ContextCompat.getColor(getApplicationContext(), R.color.colorBeige);
+        int yellowColor = ContextCompat.getColor(getApplicationContext(), R.color.colorYellow);
+        int greenColor = ContextCompat.getColor(getApplicationContext(), R.color.colorGreen);
 
         random = getRandom();
 
@@ -192,8 +192,8 @@ public class icongameActivity extends Activity {
     }
 
     public boolean checkRedColor() {
-        Button screencolor = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.screencolor);
-        Button redbutton = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.btn_red);
+        Button screencolor = (Button) findViewById(R.id.screencolor);
+        Button redbutton = (Button) findViewById(R.id.btn_red);
 
         ColorDrawable screendrawable = (ColorDrawable) screencolor.getBackground();
         ColorDrawable buttondrawable = (ColorDrawable) redbutton.getBackground();
@@ -205,8 +205,8 @@ public class icongameActivity extends Activity {
     }
 
     public boolean checkBeigeColor() {
-        Button screencolor = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.screencolor);
-        Button beigebutton = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.btn_beige);
+        Button screencolor = (Button) findViewById(R.id.screencolor);
+        Button beigebutton = (Button) findViewById(R.id.btn_beige);
 
         ColorDrawable screendrawable = (ColorDrawable) screencolor.getBackground();
         ColorDrawable buttondrawable = (ColorDrawable) beigebutton.getBackground();
@@ -219,8 +219,8 @@ public class icongameActivity extends Activity {
 
     public boolean checkYellowColor() {
 
-        Button yellowbutton = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.btn_yellow);
-        Button screencolor = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.screencolor);
+        Button yellowbutton = (Button) findViewById(R.id.btn_yellow);
+        Button screencolor = (Button) findViewById(R.id.screencolor);
 
         ColorDrawable screendrawable = (ColorDrawable) screencolor.getBackground();
         ColorDrawable buttondrawable = (ColorDrawable) yellowbutton.getBackground();
@@ -232,8 +232,8 @@ public class icongameActivity extends Activity {
     }
 
     public boolean checkGreenColor() {
-        Button greenbutton = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.btn_green);
-        Button screencolor = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.screencolor);
+        Button greenbutton = (Button) findViewById(R.id.btn_green);
+        Button screencolor = (Button) findViewById(R.id.screencolor);
 
         ColorDrawable screendrawable = (ColorDrawable) screencolor.getBackground();
         ColorDrawable buttondrawable = (ColorDrawable) greenbutton.getBackground();
@@ -245,7 +245,7 @@ public class icongameActivity extends Activity {
     }
 
     private void updateGameScore() {
-        TextView gamescoretextview = (TextView) findViewById(com.haayhappen.uidp0609.testapp.R.id.gamescore);
+        TextView gamescoretextview = (TextView) findViewById(R.id.gamescore);
         try {
             gamescoretextview.setText(this.gamescore);
         } catch (Exception ex) {
@@ -254,7 +254,7 @@ public class icongameActivity extends Activity {
     }
 
     public void checkLifes() {
-        TextView lifestextview = (TextView) findViewById(com.haayhappen.uidp0609.testapp.R.id.lifestextview);
+        TextView lifestextview = (TextView) findViewById(R.id.lifestextview);
         if (lifes == 0) {
             switchToGameOverScreen();
             finish();
