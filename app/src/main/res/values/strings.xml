@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TestApp</string>
+    <string name="app_name">Buttons</string>
     <string name="logo_text">Buttons</string>
     <string name="new_game_button_txt">New Game</string>
     <string name="scores_button_txt">Scores</string>
