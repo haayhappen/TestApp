@@ -89,7 +89,8 @@
                 android:layout_width="96dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/colorRed" />
+                android:background="@color/colorRed"
+                android:enabled="false" />
 
             <Button
                 android:id="@+id/btn_green"
@@ -97,7 +98,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/colorGreen"
-                android:onClick="onGreenPressed" />
+                android:onClick="onGreenPressed"
+                android:enabled="false" />
 
             <Button
                 android:id="@+id/btn_beige"
@@ -105,7 +107,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/colorBeige"
-                android:onClick="onBeigePressed" />
+                android:onClick="onBeigePressed"
+                android:enabled="false" />
 
             <Button
                 android:id="@+id/btn_yellow"
@@ -113,7 +116,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/colorYellow"
-                android:onClick="onYellowPressed" />
+                android:onClick="onYellowPressed"
+                android:enabled="false" />
         </LinearLayout>
 
 

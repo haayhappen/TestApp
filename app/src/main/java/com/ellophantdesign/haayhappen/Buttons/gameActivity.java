@@ -10,9 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import java.util.Random;
 
 public class gameActivity extends Activity {
+
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     TextView timerTextView;
     int lastrandomused = 5;
@@ -27,6 +31,18 @@ public class gameActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        Button redbutton = (Button) findViewById(R.id.btn_red);
+        Button beigebutton = (Button) findViewById(R.id.btn_beige);
+        Button yellowbutton = (Button) findViewById(R.id.btn_yellow);
+        Button greenbutton = (Button) findViewById(R.id.btn_green);
+
+        redbutton.setEnabled(false);
+        beigebutton.setEnabled(false);
+        yellowbutton.setEnabled(false);
+        greenbutton.setEnabled(false);
+
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         timerTextView = (TextView) findViewById(R.id.timerTextView);
 
         final Button startbutton = (Button) findViewById(R.id.btn_start_game);
@@ -36,6 +52,22 @@ public class gameActivity extends Activity {
 
             @Override
             public void onClick(View v) {
+
+                Button redbutton = (Button) findViewById(R.id.btn_red);
+                Button beigebutton = (Button) findViewById(R.id.btn_beige);
+                Button yellowbutton = (Button) findViewById(R.id.btn_yellow);
+                Button greenbutton = (Button) findViewById(R.id.btn_green);
+                redbutton.setEnabled(true);
+                beigebutton.setEnabled(true);
+                yellowbutton.setEnabled(true);
+                greenbutton.setEnabled(true);
+
+                Bundle bundle = new Bundle();
+                bundle.putString(FirebaseAnalytics.Param.ITEM_ID, startbutton.toString());
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Game start");
+                bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+
                 changeScreenColor();
                 TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
                 textView_instructions.setVisibility(View.GONE);
@@ -43,7 +75,7 @@ public class gameActivity extends Activity {
                 View startbuttonview = findViewById(R.id.btn_start_game);
                 startbuttonview.setVisibility(View.GONE);
 
-               timer = new CountDownTimer(5000, 1000) {
+               timer = new CountDownTimer(30000, 1000) {
 
                     public void onTick(long millisUntilFinished) {
                         timerTextView.setText("" + millisUntilFinished / 1000);
@@ -60,7 +92,6 @@ public class gameActivity extends Activity {
         });
 
 
-        Button redbutton = (Button) findViewById(R.id.btn_red);
         redbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +111,6 @@ public class gameActivity extends Activity {
             }
         });
 
-        Button beigebutton = (Button) findViewById(R.id.btn_beige);
         beigebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,7 +129,6 @@ public class gameActivity extends Activity {
             }
         });
 
-        Button yellowbutton = (Button) findViewById(R.id.btn_yellow);
         yellowbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +147,7 @@ public class gameActivity extends Activity {
             }
         });
 
-        Button greenbutton = (Button) findViewById(R.id.btn_green);
+
         greenbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
