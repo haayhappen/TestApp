@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Random;
-import java.util.Timer;
 
 public class gameActivity extends Activity {
 
@@ -19,9 +18,9 @@ public class gameActivity extends Activity {
     int lastrandomused = 5;
     int random;
     int lifes = 3;
+    CountDownTimer timer;
     //counter definitions
     private int gamescore = 0;
-    CountDownTimer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,7 +162,6 @@ public class gameActivity extends Activity {
     public void changeScreenColor() {
 
         Button screencolor = (Button) findViewById(R.id.screencolor);
-
         int redColor = ContextCompat.getColor(getApplicationContext(), R.color.colorRed);
         int beigeColor = ContextCompat.getColor(getApplicationContext(), R.color.colorBeige);
         int yellowColor = ContextCompat.getColor(getApplicationContext(), R.color.colorYellow);
@@ -262,11 +260,9 @@ public class gameActivity extends Activity {
         }else {
             lifestextview.setText(lifes+"");
         }
-
     }
 
     private int getRandom() {
-
         Random random = new Random();
         return random.nextInt(4);
     }
