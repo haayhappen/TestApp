@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class gameActivity extends Activity {
+public class icongameActivity extends Activity {
 
     TextView timerTextView;
     int lastrandomused = 5;
@@ -43,7 +43,7 @@ public class gameActivity extends Activity {
                 View startbuttonview = findViewById(com.haayhappen.uidp0609.testapp.R.id.btn_start_game);
                 startbuttonview.setVisibility(View.GONE);
 
-               timer = new CountDownTimer(5000, 1000) {
+                timer = new CountDownTimer(5000, 1000) {
 
                     public void onTick(long millisUntilFinished) {
                         timerTextView.setText("" + millisUntilFinished / 1000);
@@ -84,8 +84,8 @@ public class gameActivity extends Activity {
         beigebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
-               // textView_instructions.setText("Beige pressed");
+                // TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
+                // textView_instructions.setText("Beige pressed");
 
                 if (checkBeigeColor()) {
                     changeScreenColor();
@@ -103,8 +103,8 @@ public class gameActivity extends Activity {
         yellowbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
-               // textView_instructions.setText("yellow pressed");
+                // TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
+                // textView_instructions.setText("yellow pressed");
 
                 if (checkYellowColor()) {
                     changeScreenColor();
@@ -153,6 +153,7 @@ public class gameActivity extends Activity {
     @Override
     public void onBackPressed() {
     }
+
     @Override
     public void onPause() {
         super.onPause();
@@ -257,8 +258,8 @@ public class gameActivity extends Activity {
         if (lifes == 0) {
             switchToGameOverScreen();
             finish();
-        }else {
-            lifestextview.setText(lifes+"");
+        } else {
+            lifestextview.setText(lifes + "");
         }
     }
 

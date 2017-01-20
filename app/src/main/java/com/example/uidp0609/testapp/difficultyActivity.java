@@ -8,7 +8,7 @@ public class difficultyActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_difficulty);
+        setContentView(com.haayhappen.uidp0609.testapp.R.layout.activity_difficulty);
     }
 
     @Override

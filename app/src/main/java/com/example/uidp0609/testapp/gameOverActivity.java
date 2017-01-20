@@ -16,17 +16,16 @@ import android.widget.TextView;
 
 public class gameOverActivity extends Activity {
 
+    private static final String TAG = "Gameoveractivity";
     public int score;
     private TextView finalScoreTextView;
     private Button playagainbutton;
     private Button backToMenuButton;
 
-    private static final String TAG = "Gameoveractivity";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_over);
+        setContentView(com.haayhappen.uidp0609.testapp.R.layout.activity_game_over);
 
         Bundle b = getIntent().getExtras();
         score = b.getInt("gamescore");
@@ -66,9 +65,9 @@ public class gameOverActivity extends Activity {
     }
 
     private void growAnimScore(){
-            Animation a = AnimationUtils.loadAnimation(this, R.anim.grow);
+        Animation a = AnimationUtils.loadAnimation(this, com.haayhappen.uidp0609.testapp.R.anim.grow);
             a.reset();
-        finalScoreTextView = (TextView) findViewById(R.id.finalscore);
+        finalScoreTextView = (TextView) findViewById(com.haayhappen.uidp0609.testapp.R.id.finalscore);
         finalScoreTextView.setVisibility(View.VISIBLE);
         finalScoreTextView.clearAnimation();
         finalScoreTextView.startAnimation(a);
@@ -81,17 +80,17 @@ public class gameOverActivity extends Activity {
         }
     }
     private void growAnimButtons(){
-            Animation a = AnimationUtils.loadAnimation(this, R.anim.grow);
+        Animation a = AnimationUtils.loadAnimation(this, com.haayhappen.uidp0609.testapp.R.anim.grow);
             a.reset();
-        playagainbutton = (Button) findViewById(R.id.playagainbutton);
+        playagainbutton = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.playagainbutton);
         playagainbutton.setVisibility(View.VISIBLE);
         playagainbutton.clearAnimation();
         playagainbutton.startAnimation(a);
     }
     private void growAnimButtons1(){
-        Animation a = AnimationUtils.loadAnimation(this, R.anim.grow);
+        Animation a = AnimationUtils.loadAnimation(this, com.haayhappen.uidp0609.testapp.R.anim.grow);
         a.reset();
-        backToMenuButton = (Button) findViewById(R.id.backtomenubutton);
+        backToMenuButton = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.backtomenubutton);
         backToMenuButton.setVisibility(View.VISIBLE);
         backToMenuButton.clearAnimation();
         backToMenuButton.startAnimation(a);

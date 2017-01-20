@@ -17,17 +17,18 @@ public class MainActivity extends Activity {
 
     //Define global Variables
     final Context context = this;
-    private Button button;
     public String playerName;
+    boolean doubleBackToExitPressedOnce = false;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(com.haayhappen.uidp0609.testapp.R.layout.activity_main);
 
 
         //set playername out of sharedprefs
-        button = (Button) findViewById(R.id.btn_playername);
+        button = (Button) findViewById(com.haayhappen.uidp0609.testapp.R.id.btn_playername);
         SharedPreferences sharedPref = getSharedPreferences("playerName", Context.MODE_PRIVATE);
         String playerName = sharedPref.getString("playerName", "Player 1");
         button.setText(playerName);
@@ -42,11 +43,11 @@ public class MainActivity extends Activity {
                 // custom dialog
                 final Dialog dialog = new Dialog(context);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.custom_dialog);
+                dialog.setContentView(com.haayhappen.uidp0609.testapp.R.layout.custom_dialog);
 
-                final EditText edittext = (EditText) dialog.findViewById(R.id.editText);
+                final EditText edittext = (EditText) dialog.findViewById(com.haayhappen.uidp0609.testapp.R.id.editText);
                 edittext.setText(button.getText());
-                Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+                Button dialogButton = (Button) dialog.findViewById(com.haayhappen.uidp0609.testapp.R.id.dialogButtonOK);
                 // if button is clicked, close the custom dialog
 
                 dialogButton.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +72,6 @@ public class MainActivity extends Activity {
         });
 
     }
-
 
     public String getPlayerName() {
         return playerName;
@@ -103,8 +103,6 @@ public class MainActivity extends Activity {
         super.onPause();
         overridePendingTransition(0, 0);
     }
-
-    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     public void onBackPressed() {

@@ -13,9 +13,9 @@ public class scoresActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scores);
+        setContentView(com.haayhappen.uidp0609.testapp.R.layout.activity_scores);
 
-        TextView scoretextview = (TextView) findViewById(R.id.scoretextview);
+        TextView scoretextview = (TextView) findViewById(com.haayhappen.uidp0609.testapp.R.id.scoretextview);
         SharedPreferences sharedPref = getSharedPreferences("scores", Context.MODE_PRIVATE);
         int score = sharedPref.getInt("score",0);
         scoretextview.setText(score+"");
@@ -34,7 +34,7 @@ public class scoresActivity extends Activity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("score", 0);
         editor.commit();
-        TextView scoretextview = (TextView) findViewById(R.id.scoretextview);
+        TextView scoretextview = (TextView) findViewById(com.haayhappen.uidp0609.testapp.R.id.scoretextview);
         scoretextview.setText(0+"");
         // Do something in response to button
     }
