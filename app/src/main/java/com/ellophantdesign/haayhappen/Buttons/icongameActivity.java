@@ -2,7 +2,7 @@ package com.ellophantdesign.haayhappen.Buttons;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.content.ContextCompat;
@@ -22,6 +22,13 @@ public class icongameActivity extends Activity {
     //counter definitions
     private int gamescore = 0;
 
+    Button burgerButton;
+    Button lettuceButton;
+    Button eggButton;
+    Button cupcakeButton;
+
+    Button screenIcon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,13 +43,13 @@ public class icongameActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                changeScreenColor();
+                //set what happens after start
                 TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
                 textView_instructions.setVisibility(View.GONE);
-                //set what happens after start
                 View startbuttonview = findViewById(R.id.btn_start_game);
                 startbuttonview.setVisibility(View.GONE);
 
+                changeScreenIcon();
                 timer = new CountDownTimer(5000, 1000) {
 
                     public void onTick(long millisUntilFinished) {
@@ -60,15 +67,15 @@ public class icongameActivity extends Activity {
         });
 
 
-        Button redbutton = (Button) findViewById(R.id.btn_red);
-        redbutton.setOnClickListener(new View.OnClickListener() {
+        burgerButton = (Button) findViewById(R.id.btn_red);
+        burgerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
                 //textView_instructions.setText("Red pressed");
 
-                if (checkRedColor()) {
-                    changeScreenColor();
+                if (checkBurgerIcon()) {
+                    changeScreenIcon();
                     gamescore += 100;
                     updateGameScore();
                     //add score etc.
@@ -80,15 +87,15 @@ public class icongameActivity extends Activity {
             }
         });
 
-        Button beigebutton = (Button) findViewById(R.id.btn_beige);
-        beigebutton.setOnClickListener(new View.OnClickListener() {
+        lettuceButton = (Button) findViewById(R.id.btn_beige);
+        lettuceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
                 // textView_instructions.setText("Beige pressed");
 
-                if (checkBeigeColor()) {
-                    changeScreenColor();
+                if (checkLettuceIcon()) {
+                    changeScreenIcon();
                     //add score etc.
                     gamescore += 100;
                     updateGameScore();
@@ -99,15 +106,15 @@ public class icongameActivity extends Activity {
             }
         });
 
-        Button yellowbutton = (Button) findViewById(R.id.btn_yellow);
-        yellowbutton.setOnClickListener(new View.OnClickListener() {
+        eggButton = (Button) findViewById(R.id.btn_yellow);
+        eggButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
                 // textView_instructions.setText("yellow pressed");
 
-                if (checkYellowColor()) {
-                    changeScreenColor();
+                if (checkEggIcon()) {
+                    changeScreenIcon();
                     gamescore += 100;
                     //add score etc.
                     updateGameScore();
@@ -118,15 +125,15 @@ public class icongameActivity extends Activity {
             }
         });
 
-        Button greenbutton = (Button) findViewById(R.id.btn_green);
-        greenbutton.setOnClickListener(new View.OnClickListener() {
+        cupcakeButton = (Button) findViewById(R.id.btn_green);
+        cupcakeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
                 //textView_instructions.setText("green pressed");
 
-                if (checkGreenColor()) {
-                    changeScreenColor();
+                if (checkCupcakeIcon()) {
+                    changeScreenIcon();
                     gamescore += 100;
                     //add score etc.
                     updateGameScore();
@@ -160,13 +167,13 @@ public class icongameActivity extends Activity {
         overridePendingTransition(0, 0);
     }
 
-    public void changeScreenColor() {
+    public void changeScreenIcon() {
 
-        Button screencolor = (Button) findViewById(R.id.screencolor);
-        int redColor = ContextCompat.getColor(getApplicationContext(), R.color.colorRed);
-        int beigeColor = ContextCompat.getColor(getApplicationContext(), R.color.colorBeige);
-        int yellowColor = ContextCompat.getColor(getApplicationContext(), R.color.colorYellow);
-        int greenColor = ContextCompat.getColor(getApplicationContext(), R.color.colorGreen);
+        screenIcon  = (Button) findViewById(R.id.screencolor);
+        Drawable burgerDrawable = getResources().getDrawable(R.drawable.ic_hamburger);
+        Drawable lettuceDrawable = getResources().getDrawable(R.drawable.ic_lettuce);
+        Drawable eggDrawable = getResources().getDrawable(R.drawable.ic_fried_egg);
+        Drawable cupcakeDrawable = getResources().getDrawable(R.drawable.ic_cupcake);
 
         random = getRandom();
 
@@ -176,69 +183,60 @@ public class icongameActivity extends Activity {
 
         switch (random) {
             case 0:
-                screencolor.setBackgroundColor(redColor);
+                screenIcon.setImageDrawable(getResources().getDrawable(R.drawable.ic_hamburger));
                 break;
             case 1:
-                screencolor.setBackgroundColor(beigeColor);
+                screenIcon.setBackgroundColor(beigeColor);
                 break;
             case 2:
-                screencolor.setBackgroundColor(yellowColor);
+                screenIcon.setBackgroundColor(yellowColor);
                 break;
             case 3:
-                screencolor.setBackgroundColor(greenColor);
+                screenIcon.setBackgroundColor(greenColor);
                 break;
         }
         lastrandomused = random;
     }
 
-    public boolean checkRedColor() {
-        Button screencolor = (Button) findViewById(R.id.screencolor);
-        Button redbutton = (Button) findViewById(R.id.btn_red);
+    public boolean checkBurgerIcon() {
+        Button screenIcon = (Button) findViewById(R.id.screencolor);
+        burgerButton = (Button) findViewById(R.id.btn_red);
 
-        ColorDrawable screendrawable = (ColorDrawable) screencolor.getBackground();
-        ColorDrawable buttondrawable = (ColorDrawable) redbutton.getBackground();
-
-        if (screendrawable.getColor() == buttondrawable.getColor()) {
+        if ( screenIcon.getBackground().getConstantState()== burgerButton.getBackground().getConstantState())
+        {
             return true;
         }
         return false;
     }
 
-    public boolean checkBeigeColor() {
-        Button screencolor = (Button) findViewById(R.id.screencolor);
-        Button beigebutton = (Button) findViewById(R.id.btn_beige);
+    public boolean checkLettuceIcon() {
+        Button screenIcon = (Button) findViewById(R.id.screencolor);
+        lettuceButton = (Button) findViewById(R.id.btn_red);
 
-        ColorDrawable screendrawable = (ColorDrawable) screencolor.getBackground();
-        ColorDrawable buttondrawable = (ColorDrawable) beigebutton.getBackground();
-
-        if (screendrawable.getColor() == buttondrawable.getColor()) {
+        if ( screenIcon.getBackground().getConstantState()== lettuceButton.getBackground().getConstantState())
+        {
             return true;
         }
         return false;
     }
 
-    public boolean checkYellowColor() {
+    public boolean checkEggIcon() {
+        Button screenIcon = (Button) findViewById(R.id.screencolor);
+        eggButton = (Button) findViewById(R.id.btn_red);
 
-        Button yellowbutton = (Button) findViewById(R.id.btn_yellow);
-        Button screencolor = (Button) findViewById(R.id.screencolor);
-
-        ColorDrawable screendrawable = (ColorDrawable) screencolor.getBackground();
-        ColorDrawable buttondrawable = (ColorDrawable) yellowbutton.getBackground();
-
-        if (screendrawable.getColor() == buttondrawable.getColor()) {
+        if ( screenIcon.getBackground().getConstantState()== eggButton.getBackground().getConstantState())
+        {
             return true;
         }
         return false;
     }
 
-    public boolean checkGreenColor() {
-        Button greenbutton = (Button) findViewById(R.id.btn_green);
-        Button screencolor = (Button) findViewById(R.id.screencolor);
+    public boolean checkCupcakeIcon() {
+        Button screenIcon = (Button) findViewById(R.id.screencolor);
+        cupcakeButton = (Button) findViewById(R.id.btn_red);
 
-        ColorDrawable screendrawable = (ColorDrawable) screencolor.getBackground();
-        ColorDrawable buttondrawable = (ColorDrawable) greenbutton.getBackground();
-
-        if (screendrawable.getColor() == buttondrawable.getColor()) {
+        if ( screenIcon.getBackground().getConstantState()== cupcakeButton.getBackground().getConstantState())
+        {
             return true;
         }
         return false;

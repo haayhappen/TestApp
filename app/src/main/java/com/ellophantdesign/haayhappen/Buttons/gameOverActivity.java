@@ -21,6 +21,7 @@ public class gameOverActivity extends Activity {
     private TextView finalScoreTextView;
     private Button playagainbutton;
     private Button backToMenuButton;
+    int lastscore=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +31,24 @@ public class gameOverActivity extends Activity {
         Bundle b = getIntent().getExtras();
         score = b.getInt("gamescore");
 
-        //setting preferences
-        SharedPreferences prefs = this.getSharedPreferences("scores", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putInt("score", score);
-        editor.commit();
+
+        //get last score:
+try{
+    SharedPreferences sharedPref = getSharedPreferences("scores", Context.MODE_PRIVATE);
+    int lastscore = sharedPref.getInt("score",0);
+
+}catch (Exception e){
+    lastscore = 0;
+}
+        //check if score ist higher than lastscore
+        if (score > lastscore ){
+            //if so:
+            //setting preferences
+            SharedPreferences prefs = this.getSharedPreferences("scores", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putInt("score", score);
+            editor.commit();
+        }
 
         Handler scoreHandler = new Handler();
         scoreHandler.postDelayed(new Runnable()
