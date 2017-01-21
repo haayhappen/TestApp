@@ -3,6 +3,7 @@ package com.ellophantdesign.haayhappen.Buttons;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.content.ContextCompat;
@@ -168,13 +169,7 @@ public class icongameActivity extends Activity {
     }
 
     public void changeScreenIcon() {
-
         screenIcon  = (Button) findViewById(R.id.screencolor);
-        Drawable burgerDrawable = getResources().getDrawable(R.drawable.ic_hamburger);
-        Drawable lettuceDrawable = getResources().getDrawable(R.drawable.ic_lettuce);
-        Drawable eggDrawable = getResources().getDrawable(R.drawable.ic_fried_egg);
-        Drawable cupcakeDrawable = getResources().getDrawable(R.drawable.ic_cupcake);
-
         random = getRandom();
 
         while (random == lastrandomused) {
@@ -183,16 +178,32 @@ public class icongameActivity extends Activity {
 
         switch (random) {
             case 0:
-                screenIcon.setImageDrawable(getResources().getDrawable(R.drawable.ic_hamburger));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    screenIcon.setBackground(getResources().getDrawable(R.drawable.ic_hamburger));
+                }else {
+                    screenIcon.setBackgroundDrawable(getResources().getDrawable(R.drawable.ic_hamburger));
+                }
                 break;
             case 1:
-                screenIcon.setBackgroundColor(beigeColor);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    screenIcon.setBackground(getResources().getDrawable(R.drawable.ic_lettuce));
+                }else {
+                    screenIcon.setBackgroundDrawable(getResources().getDrawable(R.drawable.ic_lettuce));
+                }
                 break;
             case 2:
-                screenIcon.setBackgroundColor(yellowColor);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    screenIcon.setBackground(getResources().getDrawable(R.drawable.ic_fried_egg));
+                }else {
+                    screenIcon.setBackgroundDrawable(getResources().getDrawable(R.drawable.ic_fried_egg));
+                }
                 break;
             case 3:
-                screenIcon.setBackgroundColor(greenColor);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    screenIcon.setBackground(getResources().getDrawable(R.drawable.ic_cupcake));
+                }else {
+                    screenIcon.setBackgroundDrawable(getResources().getDrawable(R.drawable.ic_cupcake));
+                }
                 break;
         }
         lastrandomused = random;

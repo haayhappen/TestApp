@@ -29,7 +29,7 @@
                 android:layout_weight="0.49"
                 android:text="Time:"
                 android:textColor="@color/common_google_signin_btn_text_light_focused"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/timerTextView"
@@ -38,7 +38,7 @@
                 android:layout_weight="1.53"
                 android:text="30"
                 android:textColor="@color/common_google_signin_btn_text_light_focused"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/lifetextview"
@@ -47,7 +47,7 @@
                 android:layout_weight="0.27"
                 android:text="Lifes"
                 android:textColor="@color/common_google_signin_btn_text_light_focused"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/lifestextview"
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:text="3"
                 android:textColor="@color/common_google_signin_btn_text_light_focused"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:layout_weight="0.51" />
 
             <TextView
@@ -63,7 +63,8 @@
                 android:layout_height="wrap_content"
                 android:text="Score:"
                 android:textColor="@color/common_google_signin_btn_text_light_focused"
-                android:textSize="30sp" />
+                android:textSize="20sp"
+                android:layout_weight="0.46" />
 
             <TextView
                 android:id="@+id/gamescore"
@@ -71,7 +72,8 @@
                 android:layout_height="wrap_content"
                 android:text="0"
                 android:textColor="@color/common_google_signin_btn_text_light_focused"
-                android:textSize="30sp" />
+                android:textSize="20sp"
+                android:layout_weight="0.65" />
 
         </LinearLayout>
 

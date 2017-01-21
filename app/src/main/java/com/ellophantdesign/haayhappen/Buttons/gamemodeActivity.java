@@ -124,7 +124,7 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
             Log.d(TAG, "User is " + (mIsPremium ? "PREMIUM" : "NOT PREMIUM"));
             //Displaying Icons Button if premium has been purchased
             updateUi();
-            setWaitScreen(false);
+            //setWaitScreen(false);
             Log.d(TAG, "Initial inventory query finished; enabling main UI.");
 
         }
@@ -145,7 +145,7 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
     // User clicked the "Upgrade to Premium" button.
     public void buyClick(View arg0) {
         Log.d(TAG, "Upgrade button clicked; launching purchase flow for upgrade.");
-        setWaitScreen(true);
+        //setWaitScreen(true);
 
         /* TODO: for security, generate your payload here for verification. See the comments on
          *        verifyDeveloperPayload() for more info. Since this is a SAMPLE, we just use
@@ -157,7 +157,7 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
                     mPurchaseFinishedListener, payload);
         } catch (IabAsyncInProgressException e) {
             complain("Error launching purchase flow. Another async operation in progress.");
-            setWaitScreen(false);
+            //setWaitScreen(false);
         }
     }
 
@@ -219,12 +219,12 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
 
             if (result.isFailure()) {
                 complain("Error purchasing: " + result);
-                setWaitScreen(false);
+                //setWaitScreen(false);
                 return;
             }
             if (!verifyDeveloperPayload(purchase)) {
                 complain("Error purchasing. Authenticity verification failed.");
-                setWaitScreen(false);
+                //setWaitScreen(false);
                 return;
             }
 
@@ -237,7 +237,7 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
                 alert("Thank you for buying the Icons gamemode!");
                 mIsPremium = true;
                 updateUi();
-                setWaitScreen(false);
+                //setWaitScreen(false);
             }
         }
     };
