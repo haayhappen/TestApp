@@ -54,7 +54,7 @@
                 android:id="@+id/lifestextview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.37"
+                android:layout_weight="0.38"
                 android:text="3"
                 android:textColor="@color/common_google_signin_btn_text_light_focused"
                 android:textSize="20sp" />
@@ -73,7 +73,8 @@
                 android:layout_height="wrap_content"
                 android:text="0"
                 android:textColor="@color/common_google_signin_btn_text_light_focused"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_weight="0.82" />
 
         </LinearLayout>
 

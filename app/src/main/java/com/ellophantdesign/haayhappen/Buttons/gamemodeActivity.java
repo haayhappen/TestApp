@@ -122,7 +122,8 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
             Purchase premiumPurchase = inventory.getPurchase(SKU_PREMIUM);
             mIsPremium = (premiumPurchase != null && verifyDeveloperPayload(premiumPurchase));
             Log.d(TAG, "User is " + (mIsPremium ? "PREMIUM" : "NOT PREMIUM"));
-            //Displaying Icons Button if premium has been purchased
+
+            //Displaying Icons Button if premium has been purchased in updateUi()
             updateUi();
             //setWaitScreen(false);
             Log.d(TAG, "Initial inventory query finished; enabling main UI.");
@@ -274,14 +275,14 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
 
 
     }
-    */
+
     public void onTestClicked(View view){
         Intent intent = new Intent(this, icongameActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
         Toast.makeText(this,"Just for testing purposes!",Toast.LENGTH_SHORT).show();
     }
-
+*/
     public void onPause() {
         super.onPause();
         overridePendingTransition(0, 0);
@@ -296,17 +297,14 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
     }
 
     private String GetMiddleBit() {
-
         return "1EuDs4aZAIOrFnYTM8perTBzxdNas4T1W12t5xJGtIuCEGMg0f3npTn014Xieh3AxO5KKY5/SpBkscl9mbHvlitwMyXGGa";
     }
 
         // updates UI to reflect model
         public void updateUi() {
-
             // "Upgrade" button is only visible if the user is not premium
             findViewById(R.id.iconsbuybutton).setVisibility(mIsPremium ? View.GONE : View.VISIBLE);
             findViewById(R.id.Icons).setVisibility(mIsPremium ? View.VISIBLE : View.GONE);
-
         }
 
         // Enables or disables the "please wait" screen.
@@ -328,4 +326,9 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
             bld.create().show();
         }
 
+    public void onIconButtonClicked(View view) {
+        Intent intent = new Intent(this, icongameActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
     }
+}

@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -25,12 +26,41 @@ public class MainActivity extends Activity {
     private Button button;
     private ImageButton vibrationButton;
     public static boolean vibration=true;
+    static final String TAG ="MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+try{
+    vibrationButton = (ImageButton) findViewById(R.id.vibrationbutton);
+    Drawable vibrationOn = this.context.getResources().getDrawable(R.drawable.ic_vibration_on);
+    Drawable vibrationOff = this.context.getResources().getDrawable(R.drawable.ic_vibration_off);
+
+    //get old vibration toggle status
+    SharedPreferences sharedPrefvib = getSharedPreferences("vibration", Context.MODE_PRIVATE);
+    this.vibration = sharedPrefvib.getBoolean("vibration", false);
+    Log.v(TAG,"Vibration loaded as "+vibration);
+
+    if (vibration){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            vibrationButton.setBackground(vibrationOn);
+        }else {
+            vibrationButton.setBackgroundDrawable(vibrationOn);
+        }
+    }else{
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            vibrationButton.setBackground(vibrationOff);
+        }else {
+            vibrationButton.setBackgroundDrawable(vibrationOff);
+        }
+    }
+
+}catch (Exception ex ){
+    Log.v(TAG,"Failed to get shared preferences!");
+    Log.v(TAG,ex.getMessage());
+}
 
         //set playername out of sharedprefs
         button = (Button) findViewById(R.id.btn_playername);
@@ -136,6 +166,15 @@ public class MainActivity extends Activity {
         vibrationButton = (ImageButton) findViewById(R.id.vibrationbutton);
         if (vibrationButton.getBackground().getConstantState() == vibrationOn.getConstantState()){
             vibration=false;
+
+            //save toggle status
+
+            SharedPreferences sharedPref = getSharedPreferences("vibration", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putBoolean("vibration", vibration);
+            editor.apply();
+            Log.v(TAG,"Vibration saved as "+vibration);
+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 vibrationButton.setBackground(vibrationOff);
             }else {
@@ -143,6 +182,15 @@ public class MainActivity extends Activity {
             }
         }else if(vibrationButton.getBackground().getConstantState() == vibrationOff.getConstantState()){
             vibration=true;
+
+            //save toggle status
+
+            SharedPreferences sharedPref = getSharedPreferences("vibration", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putBoolean("vibration", vibration);
+            editor.apply();
+            Log.v(TAG,"Vibration saved as "+vibration);
+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 vibrationButton.setBackground(vibrationOn);
             }else {

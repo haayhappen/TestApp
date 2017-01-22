@@ -117,7 +117,7 @@ try{
 
 
     public void onPlayAgainPressed(View view) {
-        Intent intent = new Intent(this, gameActivity.class);
+        Intent intent = new Intent(this, gamemodeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
         // Do something in response to button

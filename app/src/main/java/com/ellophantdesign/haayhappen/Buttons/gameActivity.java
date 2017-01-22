@@ -28,7 +28,7 @@ public class gameActivity extends Activity {
     int lifes = 3;
     CountDownTimer timer;
     //counter definitions
-    private int gamescore = 0;
+    int gamescore = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -283,7 +283,7 @@ public class gameActivity extends Activity {
     private void updateGameScore() {
         TextView gamescoretextview = (TextView) findViewById(R.id.gamescore);
         try {
-            gamescoretextview.setText(this.gamescore);
+            gamescoretextview.setText(this.gamescore+"");
         } catch (Exception ex) {
             //Hack users facebook, whatsapp and gmail account because it shouldfucking work
         }
@@ -307,13 +307,10 @@ public class gameActivity extends Activity {
     public void vibrate(){
 
         if (MainActivity.vibration){
-
+            Vibrator v = (Vibrator) this.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+            // Vibrate for 500 milliseconds
+            v.vibrate(500);
         }
-
-        Vibrator v = (Vibrator) this.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
-        // Vibrate for 500 milliseconds
-        v.vibrate(500);
-
         TextView tv = (TextView) findViewById(R.id.textview_instructions);
         tv.setVisibility(View.VISIBLE);
         tv.setText("NOPE!");
@@ -330,7 +327,7 @@ public class gameActivity extends Activity {
                     }
                 });
             }
-        }, 1000);
+        }, 500);
     }
 
 }
