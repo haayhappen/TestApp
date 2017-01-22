@@ -275,6 +275,12 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
 
     }
     */
+    public void onTestClicked(View view){
+        Intent intent = new Intent(this, icongameActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
+        Toast.makeText(this,"Just for testing purposes!",Toast.LENGTH_SHORT).show();
+    }
 
     public void onPause() {
         super.onPause();
@@ -288,8 +294,6 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
         mHelper = null;
 
     }
-
-
 
     private String GetMiddleBit() {
 

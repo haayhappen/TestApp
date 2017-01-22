@@ -5,12 +5,15 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -20,6 +23,8 @@ public class MainActivity extends Activity {
     public String playerName;
     boolean doubleBackToExitPressedOnce = false;
     private Button button;
+    private ImageButton vibrationButton;
+    public static boolean vibration=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,4 +127,28 @@ public class MainActivity extends Activity {
             }
         }, 2000);
     }
+
+    public void vibration_toggled(View view) {
+
+        Drawable vibrationOn = this.context.getResources().getDrawable(R.drawable.ic_vibration_on);
+        Drawable vibrationOff = this.context.getResources().getDrawable(R.drawable.ic_vibration_off);
+
+        vibrationButton = (ImageButton) findViewById(R.id.vibrationbutton);
+        if (vibrationButton.getBackground().getConstantState() == vibrationOn.getConstantState()){
+            vibration=false;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                vibrationButton.setBackground(vibrationOff);
+            }else {
+                vibrationButton.setBackgroundDrawable(vibrationOff);
+            }
+        }else if(vibrationButton.getBackground().getConstantState() == vibrationOff.getConstantState()){
+            vibration=true;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                vibrationButton.setBackground(vibrationOn);
+            }else {
+                vibrationButton.setBackgroundDrawable(vibrationOn);
+            }
+        }
+    }
+
 }

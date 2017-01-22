@@ -1,10 +1,12 @@
 package com.ellophantdesign.haayhappen.Buttons;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +15,8 @@ import android.widget.TextView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class gameActivity extends Activity {
 
@@ -104,6 +108,7 @@ public class gameActivity extends Activity {
                     updateGameScore();
                     //add score etc.
                 } else {
+                    vibrate();
                     lifes -= 1;
                     checkLifes();
 
@@ -123,6 +128,7 @@ public class gameActivity extends Activity {
                     gamescore += 100;
                     updateGameScore();
                 } else {
+                    vibrate();
                     lifes -= 1;
                     checkLifes();
                 }
@@ -141,6 +147,7 @@ public class gameActivity extends Activity {
                     //add score etc.
                     updateGameScore();
                 } else {
+                    vibrate();
                     lifes -= 1;
                     checkLifes();
                 }
@@ -160,6 +167,7 @@ public class gameActivity extends Activity {
                     //add score etc.
                     updateGameScore();
                 } else {
+                    vibrate();
                     lifes -= 1;
                     checkLifes();
                 }
@@ -295,6 +303,36 @@ public class gameActivity extends Activity {
         Random random = new Random();
         return random.nextInt(4);
     }
+
+    public void vibrate(){
+
+        if (MainActivity.vibration){
+
+        }
+
+        Vibrator v = (Vibrator) this.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+        // Vibrate for 500 milliseconds
+        v.vibrate(500);
+
+        TextView tv = (TextView) findViewById(R.id.textview_instructions);
+        tv.setVisibility(View.VISIBLE);
+        tv.setText("NOPE!");
+        tv.setTextSize(30);
+
+        Timer t = new Timer(false);
+        t.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                        TextView tv = (TextView) findViewById(R.id.textview_instructions);
+                        tv.setVisibility(View.GONE);
+                    }
+                });
+            }
+        }, 1000);
+    }
+
 }
 
 

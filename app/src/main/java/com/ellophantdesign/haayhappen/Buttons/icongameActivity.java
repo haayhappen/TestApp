@@ -23,17 +23,16 @@ public class icongameActivity extends Activity {
     //counter definitions
     private int gamescore = 0;
 
-    Button burgerButton;
-    Button lettuceButton;
-    Button eggButton;
-    Button cupcakeButton;
-
-    Button screenIcon;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+        setContentView(R.layout.activity_icongame);
+
+        Button burgerButton = (Button) findViewById(R.id.burgerButton);
+        Button lettuceButton = (Button) findViewById(R.id.lettuceButton);
+        Button eggButton = (Button) findViewById(R.id.eggButton);
+        Button cupcakeButton = (Button) findViewById(R.id.cupcakeButton);
+
 
         timerTextView = (TextView) findViewById(R.id.timerTextView);
 
@@ -51,7 +50,7 @@ public class icongameActivity extends Activity {
                 startbuttonview.setVisibility(View.GONE);
 
                 changeScreenIcon();
-                timer = new CountDownTimer(5000, 1000) {
+                timer = new CountDownTimer(30000, 1000) {
 
                     public void onTick(long millisUntilFinished) {
                         timerTextView.setText("" + millisUntilFinished / 1000);
@@ -67,8 +66,6 @@ public class icongameActivity extends Activity {
             }
         });
 
-
-        burgerButton = (Button) findViewById(R.id.btn_red);
         burgerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,7 +85,6 @@ public class icongameActivity extends Activity {
             }
         });
 
-        lettuceButton = (Button) findViewById(R.id.btn_beige);
         lettuceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,7 +103,6 @@ public class icongameActivity extends Activity {
             }
         });
 
-        eggButton = (Button) findViewById(R.id.btn_yellow);
         eggButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,7 +121,6 @@ public class icongameActivity extends Activity {
             }
         });
 
-        cupcakeButton = (Button) findViewById(R.id.btn_green);
         cupcakeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -169,7 +163,7 @@ public class icongameActivity extends Activity {
     }
 
     public void changeScreenIcon() {
-        screenIcon  = (Button) findViewById(R.id.screencolor);
+        Button screenIcon  = (Button) findViewById(R.id.screencolor);
         random = getRandom();
 
         while (random == lastrandomused) {
@@ -211,9 +205,9 @@ public class icongameActivity extends Activity {
 
     public boolean checkBurgerIcon() {
         Button screenIcon = (Button) findViewById(R.id.screencolor);
-        burgerButton = (Button) findViewById(R.id.btn_red);
+        Button burgerButton = (Button) findViewById(R.id.burgerButton);
 
-        if ( screenIcon.getBackground().getConstantState()== burgerButton.getBackground().getConstantState())
+        if ( screenIcon.getBackground().getConstantState()==burgerButton.getBackground().getConstantState())
         {
             return true;
         }
@@ -222,9 +216,9 @@ public class icongameActivity extends Activity {
 
     public boolean checkLettuceIcon() {
         Button screenIcon = (Button) findViewById(R.id.screencolor);
-        lettuceButton = (Button) findViewById(R.id.btn_red);
+        Button lettuceButton = (Button) findViewById(R.id.lettuceButton);
 
-        if ( screenIcon.getBackground().getConstantState()== lettuceButton.getBackground().getConstantState())
+        if ( screenIcon.getBackground().getConstantState()==lettuceButton.getBackground().getConstantState())
         {
             return true;
         }
@@ -233,9 +227,9 @@ public class icongameActivity extends Activity {
 
     public boolean checkEggIcon() {
         Button screenIcon = (Button) findViewById(R.id.screencolor);
-        eggButton = (Button) findViewById(R.id.btn_red);
+        Button eggButton = (Button) findViewById(R.id.eggButton);
 
-        if ( screenIcon.getBackground().getConstantState()== eggButton.getBackground().getConstantState())
+        if ( screenIcon.getBackground().getConstantState()==eggButton.getBackground().getConstantState())
         {
             return true;
         }
@@ -244,9 +238,9 @@ public class icongameActivity extends Activity {
 
     public boolean checkCupcakeIcon() {
         Button screenIcon = (Button) findViewById(R.id.screencolor);
-        cupcakeButton = (Button) findViewById(R.id.btn_red);
+        Button cupcakeButton = (Button) findViewById(R.id.cupcakeButton);
 
-        if ( screenIcon.getBackground().getConstantState()== cupcakeButton.getBackground().getConstantState())
+        if ( screenIcon.getBackground().getConstantState()==cupcakeButton.getBackground().getConstantState())
         {
             return true;
         }
