@@ -180,8 +180,8 @@ public class gameActivity extends Activity {
         Intent intent = new Intent(this, gameOverActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         Bundle b = new Bundle();
-        b.putInt("gamescore", gamescore); //Your id
-        intent.putExtras(b); //Put your id to your next Intent
+        b.putInt("gamescore", gamescore);
+        intent.putExtras(b);
         startActivity(intent);
         timer.cancel();
         finish();

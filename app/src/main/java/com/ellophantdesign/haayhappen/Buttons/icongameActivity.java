@@ -1,17 +1,21 @@
 package com.ellophantdesign.haayhappen.Buttons;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class icongameActivity extends Activity {
 
@@ -101,6 +105,8 @@ public class icongameActivity extends Activity {
                     updateGameScore();
                     //no-->
                 } else {
+                    //vibrate
+                    vibrate();
                     //subtract a life
                     lifes -= 1;
                     //check if player is dead
@@ -118,6 +124,7 @@ public class icongameActivity extends Activity {
                     gamescore += 100;
                     updateGameScore();
                 } else {
+                    vibrate();
                     lifes -= 1;
                     checkLifes();
                 }
@@ -133,6 +140,7 @@ public class icongameActivity extends Activity {
                     //add score etc.
                     updateGameScore();
                 } else {
+                    vibrate();
                     lifes -= 1;
                     checkLifes();
                 }
@@ -148,6 +156,7 @@ public class icongameActivity extends Activity {
                     //add score etc.
                     updateGameScore();
                 } else {
+                    vibrate();
                     lifes -= 1;
                     checkLifes();
                 }
@@ -287,6 +296,17 @@ public class icongameActivity extends Activity {
         Random random = new Random();
         return random.nextInt(4);
     }
+
+    public void vibrate(){
+
+        if (MainActivity.vibration){
+            Vibrator v = (Vibrator) this.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+            // Vibrate for 500 milliseconds
+            v.vibrate(500);
+        }
+
+    }
+
 }
 
 
