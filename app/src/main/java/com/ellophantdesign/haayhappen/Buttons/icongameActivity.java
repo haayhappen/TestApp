@@ -304,9 +304,7 @@ public class icongameActivity extends Activity {
             // Vibrate for 500 milliseconds
             v.vibrate(500);
         }
-
     }
-
 }
 
 
