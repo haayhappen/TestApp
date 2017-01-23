@@ -276,7 +276,7 @@ public class icongameActivity extends Activity {
     private void updateGameScore() {
         TextView gamescoretextview = (TextView) findViewById(R.id.gamescore);
         try {
-            gamescoretextview.setText(this.gamescore);
+            gamescoretextview.setText(this.gamescore+"");
         } catch (Exception ex) {
             //Hack users facebook, whatsapp and gmail account because it shouldfucking work
         }
