@@ -286,14 +286,14 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
     public void onPause() {
         super.onPause();
         overridePendingTransition(0, 0);
-
+/*
         if (mHelper != null) try {
             mHelper.dispose();
         } catch (IabHelper.IabAsyncInProgressException e) {
             e.printStackTrace();
         }
         mHelper = null;
-
+*/
     }
 
     private String GetMiddleBit() {

@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-    //Define global Variables
+    //Define Variables
     final Context context = this;
     public String playerName;
     boolean doubleBackToExitPressedOnce = false;

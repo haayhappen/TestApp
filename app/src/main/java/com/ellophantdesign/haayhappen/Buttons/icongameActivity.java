@@ -33,6 +33,10 @@ public class icongameActivity extends Activity {
         Button eggButton = (Button) findViewById(R.id.eggButton);
         Button cupcakeButton = (Button) findViewById(R.id.cupcakeButton);
 
+        burgerButton.setEnabled(false);
+        lettuceButton.setEnabled(false);
+        eggButton.setEnabled(false);
+        cupcakeButton.setEnabled(false);
 
         timerTextView = (TextView) findViewById(R.id.timerTextView);
 
@@ -44,12 +48,27 @@ public class icongameActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //set what happens after start
+
+                //Enable IconButtons to play
+                Button burgerButton = (Button) findViewById(R.id.burgerButton);
+                Button lettuceButton = (Button) findViewById(R.id.lettuceButton);
+                Button eggButton = (Button) findViewById(R.id.eggButton);
+                Button cupcakeButton = (Button) findViewById(R.id.cupcakeButton);
+
+                burgerButton.setEnabled(true);
+                lettuceButton.setEnabled(true);
+                eggButton.setEnabled(true);
+                cupcakeButton.setEnabled(true);
+
+                //Hide Instructions and start button
                 TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
                 textView_instructions.setVisibility(View.GONE);
                 View startbuttonview = findViewById(R.id.btn_start_game);
                 startbuttonview.setVisibility(View.GONE);
 
+                //change screen icon for the first time
                 changeScreenIcon();
+                //setup timer
                 timer = new CountDownTimer(30000, 1000) {
 
                     public void onTick(long millisUntilFinished) {
@@ -57,6 +76,7 @@ public class icongameActivity extends Activity {
                     }
 
                     public void onFinish() {
+                        //when timer is finished switches to gameover activity
                         switchToGameOverScreen();
                         finish();
                     }
@@ -69,18 +89,22 @@ public class icongameActivity extends Activity {
         burgerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
-                //textView_instructions.setText("Red pressed");
 
+                //check if the burgerbutton was actually pressed
+                //yes-->
                 if (checkBurgerIcon()) {
+                    //change screen icon
                     changeScreenIcon();
+                    //add score
                     gamescore += 100;
+                    //update score
                     updateGameScore();
-                    //add score etc.
+                    //no-->
                 } else {
+                    //subtract a life
                     lifes -= 1;
+                    //check if player is dead
                     checkLifes();
-
                 }
             }
         });
@@ -88,9 +112,6 @@ public class icongameActivity extends Activity {
         lettuceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
-                // textView_instructions.setText("Beige pressed");
-
                 if (checkLettuceIcon()) {
                     changeScreenIcon();
                     //add score etc.
@@ -106,9 +127,6 @@ public class icongameActivity extends Activity {
         eggButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
-                // textView_instructions.setText("yellow pressed");
-
                 if (checkEggIcon()) {
                     changeScreenIcon();
                     gamescore += 100;
@@ -124,9 +142,6 @@ public class icongameActivity extends Activity {
         cupcakeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TextView textView_instructions = (TextView) findViewById(R.id.textview_instructions);
-                //textView_instructions.setText("green pressed");
-
                 if (checkCupcakeIcon()) {
                     changeScreenIcon();
                     gamescore += 100;
@@ -138,16 +153,18 @@ public class icongameActivity extends Activity {
                 }
             }
         });
-
     }
 
     private void switchToGameOverScreen() {
+        //Intent to game over activity
         Intent intent = new Intent(this, gameOverActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        //pass score to gameover activity
         Bundle b = new Bundle();
-        b.putInt("gamescore", gamescore); //Your id
-        intent.putExtras(b); //Put your id to your next Intent
+        b.putInt("gamescore", gamescore);
+        intent.putExtras(b);
         startActivity(intent);
+        //cancel the timer
         timer.cancel();
         finish();
     }
