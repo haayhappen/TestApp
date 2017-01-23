@@ -23,7 +23,7 @@
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:textSize="25sp"
-        android:text="Try Icons!"
+        android:text="@string/try_icons_gamemode"
         android:onClick="buyClick" />
 
     <Button
@@ -37,23 +37,9 @@
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:textSize="25sp"
-        android:text="Icons"
+        android:text="@string/icons_gamemode"
         android:onClick="onIconButtonClicked"
         android:visibility="gone" />
-
-    <Button
-        android:id="@+id/colorsbutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_style"
-        android:onClick="OnColorsBtnPressed"
-        android:textColor="#ffffff"
-        android:textSize="25sp"
-        android:text="Colors"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="110dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -68,21 +54,6 @@
         android:textSize="35sp" />
 
     <Button
-        android:text="Please wait!"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:id="@+id/screen_wait"
-        android:background="@android:color/white"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="56dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:clickable="false"
-        android:visibility="gone" />
-
-    <Button
         android:id="@+id/testIconButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,11 +61,25 @@
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:textSize="25sp"
-        android:text="TestIconGamemode"
+        android:text="@string/testicongamemode"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:onClick="onTestClicked"
         android:visibility="gone" />
+
+    <Button
+        android:id="@+id/colorsbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
+        android:onClick="OnColorsBtnPressed"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:text="@string/colors_gamemode"
+        android:layout_marginTop="125dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

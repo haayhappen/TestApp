@@ -76,12 +76,12 @@
         android:layout_height="50dp"
         android:background="@drawable/ic_vibration_on"
         android:textColor="@android:color/white"
-        android:layout_weight="1"
         android:layout_above="@+id/btn_playername"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         app:srcCompat="@drawable/button_style"
-        android:onClick="vibration_toggled" />
+        android:onClick="vibration_toggled"
+        android:contentDescription="" />
 
 
 </RelativeLayout>
