@@ -5,10 +5,7 @@
     android:id="@+id/activity_game_over"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     tools:context="com.ellophantdesign.haayhappen.Buttons.gameOverActivity"
     android:background="@drawable/gradient_background">
 
@@ -78,13 +75,25 @@
         android:layout_marginTop="12dp"
         android:visibility="invisible" />
 
-    <com.google.android.gms.ads.AdView
+    <com.google.android.gms.ads.NativeExpressAdView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/adView"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id"/>
+        ads:adSize="360x100"
+        ads:adUnitId="ca-app-pub-4970672389873444/3568885213"/>
+
+    <TextView
+        android:text="Hidden pokemon behind the ads...click to catch 'em all!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:id="@+id/catchemall"
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
 
 </RelativeLayout>

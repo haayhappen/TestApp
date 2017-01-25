@@ -1,14 +1,18 @@
 package com.ellophantdesign.haayhappen.Buttons;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -16,6 +20,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import static android.R.attr.label;
+import static com.ellophantdesign.haayhappen.Buttons.R.attr.colorPrimaryDark;
+import static com.ellophantdesign.haayhappen.Buttons.R.attr.icon;
+import static com.ellophantdesign.haayhappen.Buttons.R.color.colorPrimary;
 
 public class MainActivity extends Activity {
 
@@ -28,6 +37,7 @@ public class MainActivity extends Activity {
     public static boolean vibration=true;
     static final String TAG ="MainActivity";
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

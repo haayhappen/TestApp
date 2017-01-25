@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
 
-    <color name="colorRed">#ff6f69</color>
-    <color name="colorYellow">#ffcc5c</color>
-    <color name="colorBeige">#ffeead</color>
-    <color name="colorGreen">#96ceb4</color>
+    <color name="primary">#ffcc5c</color>
+    <!--<color name="colorPrimary">#ffcc5c</color>-->
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <!-- <color name="colorAccent">#FF4081</color>-->
+
+    <color name="colorPrimaryDark">#FF9800</color>
+    <color name="colorPrimary">#607D8B</color>
+
+     <color name="colorRed">#ff6f69</color>
+     <color name="colorYellow">#ffcc5c</color>
+     <color name="colorBeige">#ffeead</color>
+     <color name="colorGreen">#96ceb4</color>
 
     <color name="black_overlay">#66000000</color>
     <color name="colorBlue">#a6e0ff</color>
+
+
 </resources>

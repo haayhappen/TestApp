@@ -3,7 +3,7 @@
     package="com.ellophantdesign.haayhappen.Buttons">
 
     <uses-sdk
-        android:minSdkVersion="15"
+
         android:targetSdkVersion="24" />
 
     <uses-permission android:name="android.permission.INTERNET" />

@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.NativeExpressAdView;
 
 
 public class gameOverActivity extends Activity {
@@ -33,13 +34,9 @@ public class gameOverActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
 
-                MobileAds.initialize(getApplicationContext(), getString(R.string.banner_ad_unit_id));
-                AdView mAdView = (AdView) findViewById(R.id.adView);
-                AdRequest request = new AdRequest.Builder()
-                        .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)        // All emulators
-                        .addTestDevice("08E21C1CA1C23AEC5BE2069ED9D37DE5")  // My oneplus3
-                        .build();
-                mAdView.loadAd(request );
+        //get ads
+        NativeExpressAdView adView =(NativeExpressAdView)findViewById(R.id.adView);
+        adView.loadAd(new AdRequest.Builder().build());
 
         Bundle b = getIntent().getExtras();
         score = b.getInt("gamescore");
@@ -119,6 +116,11 @@ try{
         backToMenuButton.setVisibility(View.VISIBLE);
         backToMenuButton.clearAnimation();
         backToMenuButton.startAnimation(a);
+
+        TextView tvads =(TextView) findViewById(R.id.catchemall);
+        tvads.setVisibility(View.VISIBLE);
+        tvads.clearAnimation();
+        tvads.startAnimation(a);
 
     }
     public void onPause() {
