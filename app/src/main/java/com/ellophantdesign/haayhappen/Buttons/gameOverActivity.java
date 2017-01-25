@@ -26,32 +26,32 @@ public class gameOverActivity extends Activity {
     private Button playagainbutton;
     private Button backToMenuButton;
     int lastscore=0;
+    boolean doneloading = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
 
-        //create ad
-        MobileAds.initialize(getApplicationContext(), getString(R.string.banner_ad_unit_id));
+        Handler adhandler = new Handler();
+        adhandler.postDelayed(new Runnable()
+        {
+            public void run()
+            {
+                //create ad
+                MobileAds.initialize(getApplicationContext(), getString(R.string.banner_ad_unit_id));
+                AdView mAdView = (AdView) findViewById(R.id.adView);
+                AdRequest request = new AdRequest.Builder()
+                        .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)        // All emulators
+                        .addTestDevice("08E21C1CA1C23AEC5BE2069ED9D37DE5")  // My oneplus3
+                        .build();
+                mAdView.loadAd(request );
+            }
+        }, 1500);
 
-
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        /*
-        //TODO delete when testing is done
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-*/
-        AdRequest request = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)        // All emulators
-                .addTestDevice("08E21C1CA1C23AEC5BE2069ED9D37DE5")  // My oneplus3
-                .build();
-        mAdView.loadAd(request );
 
         Bundle b = getIntent().getExtras();
         score = b.getInt("gamescore");
-
-
 try{
     //get last score:
     SharedPreferences sharedPref = getSharedPreferences("scores", Context.MODE_PRIVATE);
