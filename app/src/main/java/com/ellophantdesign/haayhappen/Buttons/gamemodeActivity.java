@@ -2,29 +2,21 @@ package com.ellophantdesign.haayhappen.Buttons;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.ellophantdesign.haayhappen.Buttons.util.IabBroadcastReceiver;
 import com.ellophantdesign.haayhappen.Buttons.util.IabBroadcastReceiver.IabBroadcastListener;
 import com.ellophantdesign.haayhappen.Buttons.util.IabHelper;
+import com.ellophantdesign.haayhappen.Buttons.util.IabHelper.IabAsyncInProgressException;
 import com.ellophantdesign.haayhappen.Buttons.util.IabResult;
 import com.ellophantdesign.haayhappen.Buttons.util.Inventory;
 import com.ellophantdesign.haayhappen.Buttons.util.Purchase;
-import com.ellophantdesign.haayhappen.Buttons.util.IabHelper.IabAsyncInProgressException;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -308,10 +300,10 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
         }
 
         // Enables or disables the "please wait" screen.
-        void setWaitScreen(boolean set) {
+        /*void setWaitScreen(boolean set) {
             findViewById(R.id.activity_gamemode).setVisibility(set ? View.GONE : View.VISIBLE);
             findViewById(R.id.screen_wait).setVisibility(set ? View.VISIBLE : View.GONE);
-        }
+        }*/
 
         void complain(String message) {
             Log.e(TAG, "**** TrivialDrive Error: " + message);
