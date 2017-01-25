@@ -323,4 +323,11 @@ public class gamemodeActivity extends Activity implements IabBroadcastListener{
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
     }
+
+    public void OnPokemonBtnPressed(View view) {
+
+        Intent intent = new Intent(this, pokemonActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
+    }
 }
