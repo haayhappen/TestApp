@@ -33,12 +33,6 @@ public class gameOverActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
 
-        Handler adhandler = new Handler();
-        adhandler.postDelayed(new Runnable()
-        {
-            public void run()
-            {
-                //create ad
                 MobileAds.initialize(getApplicationContext(), getString(R.string.banner_ad_unit_id));
                 AdView mAdView = (AdView) findViewById(R.id.adView);
                 AdRequest request = new AdRequest.Builder()
@@ -46,9 +40,6 @@ public class gameOverActivity extends Activity {
                         .addTestDevice("08E21C1CA1C23AEC5BE2069ED9D37DE5")  // My oneplus3
                         .build();
                 mAdView.loadAd(request );
-            }
-        }, 1500);
-
 
         Bundle b = getIntent().getExtras();
         score = b.getInt("gamescore");
