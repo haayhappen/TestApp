@@ -315,7 +315,6 @@ public class gameActivity extends Activity {
         tv.setVisibility(View.VISIBLE);
         tv.setText("NOPE!");
         tv.setTextSize(30);
-
         Timer t = new Timer(false);
         t.schedule(new TimerTask() {
             @Override
