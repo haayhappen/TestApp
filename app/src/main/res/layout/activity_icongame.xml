@@ -36,7 +36,7 @@
                 android:id="@+id/timerTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.53"
+                android:layout_weight="1.16"
                 android:text="30"
                 android:textColor="@color/common_google_signin_btn_text_light_focused"
                 android:textSize="20sp" />
@@ -64,8 +64,8 @@
                 android:layout_height="wrap_content"
                 android:text="Score:"
                 android:textColor="@color/common_google_signin_btn_text_light_focused"
-                android:layout_weight="0.46"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_weight="0.42" />
 
             <TextView
                 android:id="@+id/gamescore"
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:text="0"
                 android:textColor="@color/common_google_signin_btn_text_light_focused"
-                android:layout_weight="0.65"
+                android:layout_weight="0.97"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -103,7 +103,8 @@
             android:layout_width="wrap_content"
             android:orientation="horizontal"
             android:weightSum="4"
-            android:layout_height="100dp">
+            android:layout_height="80dp"
+            android:layout_marginBottom="20dp">
 
             <Button
                 android:id="@+id/burgerButton"
@@ -167,7 +168,7 @@
         android:layout_marginTop="149dp"
         android:text="Hit the icon you see as fast as you can"
         android:textColor="@color/common_google_signin_btn_text_light_focused"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 

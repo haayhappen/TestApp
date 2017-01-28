@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_game_over"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.ellophantdesign.haayhappen.Buttons.gameOverActivity"
+    android:background="@drawable/gradient_background">
+
+    <TextView
+        android:text="Your final score is:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView8"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:layout_below="@+id/tv_gameover"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/backtomenubutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
+        android:text="Back to menu"
+        android:textColor="#ffffff"
+        android:textSize="40sp"
+        android:layout_below="@+id/playagainbutton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        android:onClick="onBackToMenuPressed" />
+
+    <TextView
+        android:text="Hidden pokemon behind the ads...click to catch 'em all!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:id="@+id/catchemall"
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/playagainbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
+        android:text="Play again!"
+        android:textColor="#ffffff"
+        android:textSize="40sp"
+        android:layout_marginTop="125dp"
+        android:visibility="invisible"
+        android:onClick="onPlayAgainPressed"
+        android:layout_below="@+id/finalscore"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Game Over!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="247dp"
+        android:id="@+id/tv_gameover"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="100sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finalscore"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="80sp"
+        android:layout_marginTop="47dp"
+        android:visibility="invisible"
+        android:layout_below="@+id/textView8"
+        android:layout_centerHorizontal="true" />
+
+    <com.google.android.gms.ads.NativeExpressAdView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/adView"
+        ads:adSize="360x100"
+        ads:adUnitId="ca-app-pub-4970672389873444/3568885213"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
