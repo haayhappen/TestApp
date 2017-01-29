@@ -140,6 +140,8 @@ try{
     public void OnNewGamePressed(View view) {
         Intent intent = new Intent(this, gamemodeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         // Do something in response to button
     }

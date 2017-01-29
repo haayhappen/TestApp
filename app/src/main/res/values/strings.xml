@@ -5,16 +5,14 @@
     <string name="scores_button_txt">Scores</string>
     <string name="player_name_txt">Player 1</string>
     <string name="title_activity_gamemode">gamemodeActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="choose_difficulty_txt">Choose Difficulty</string>
     <string name="choose_gamemode_txt">Choose Gamemode</string>
     <string name="colors_gamemode">Colors</string>
     <string name="icons_gamemode">Icons</string>
     <string name="please_wait">Please wait!</string>
     <string name="testicongamemode">TestIconGamemode</string>
-    <string name="try_icons_gamemode">Buy Food!</string>
+    <string name="try_icons_gamemode">Try Food-mode!</string>
     <!--Google Ads_ID-->
     <string name="banner_ad_unit_id">ca-app-pub-4970672389873444/3568885213</string>
-    <string name="pokemons">Pokemons</string>
+    <string name="pokemons">Monster</string>
 </resources>

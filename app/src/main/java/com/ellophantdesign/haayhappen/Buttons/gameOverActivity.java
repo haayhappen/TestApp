@@ -117,10 +117,10 @@ try{
         backToMenuButton.clearAnimation();
         backToMenuButton.startAnimation(a);
 
-        TextView tvads =(TextView) findViewById(R.id.catchemall);
-        tvads.setVisibility(View.VISIBLE);
-        tvads.clearAnimation();
-        tvads.startAnimation(a);
+        //TextView tvads =(TextView) findViewById(R.id.catchemall);
+        //tvads.setVisibility(View.VISIBLE);
+        //tvads.clearAnimation();
+        //tvads.startAnimation(a);
 
     }
     public void onPause() {

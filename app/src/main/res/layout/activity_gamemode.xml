@@ -12,89 +12,83 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ellophantdesign.haayhappen.Buttons.gamemodeActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:text="@string/choose_gamemode_txt"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="35sp" />
-
-    <Button
-        android:id="@+id/testIconButton"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_style"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-        android:textSize="25sp"
-        android:text="@string/testicongamemode"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="onTestClicked"
-        android:visibility="gone" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/iconsbuybutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_style"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-        android:textSize="25sp"
-        android:text="@string/try_icons_gamemode"
-        android:onClick="buyClick"
-        android:layout_below="@+id/Pokemons"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_gamemode_txt"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="50sp"
+            android:layout_above="@+id/colorsbutton"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="70dp" />
 
-    <Button
-        android:id="@+id/Pokemons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_style"
-        android:onClick="OnPokemonBtnPressed"
-        android:textColor="#ffffff"
-        android:textSize="25sp"
-        android:text="@string/pokemons"
-        android:layout_below="@+id/colorsbutton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
+        <Button
+            android:id="@+id/colorsbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:onClick="OnColorsBtnPressed"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:text="@string/colors_gamemode"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="60dp" />
 
-    <Button
-        android:id="@+id/colorsbutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_style"
-        android:onClick="OnColorsBtnPressed"
-        android:textColor="#ffffff"
-        android:textSize="25sp"
-        android:text="@string/colors_gamemode"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <Button
+            android:id="@+id/Pokemons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:onClick="OnPokemonBtnPressed"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:text="@string/pokemons"
+            android:layout_below="@+id/colorsbutton"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp" />
 
-    <Button
-        android:id="@+id/Icons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_style"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-        android:textSize="25sp"
-        android:text="@string/icons_gamemode"
-        android:onClick="onIconButtonClicked"
-        android:visibility="gone"
-        android:layout_alignBaseline="@+id/iconsbuybutton"
-        android:layout_alignBottom="@+id/iconsbuybutton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <Button
+            android:id="@+id/iconsbuybutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:text="@string/try_icons_gamemode"
+            android:onClick="buyClick"
+            android:layout_below="@+id/Pokemons"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:id="@+id/Icons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:text="@string/icons_gamemode"
+            android:onClick="onIconButtonClicked"
+            android:visibility="gone"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/Pokemons"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

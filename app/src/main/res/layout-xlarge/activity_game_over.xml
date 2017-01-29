@@ -35,17 +35,6 @@
         android:visibility="invisible"
         android:onClick="onBackToMenuPressed" />
 
-    <TextView
-        android:text="Hidden pokemon behind the ads...click to catch 'em all!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/adView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="18dp"
-        android:id="@+id/catchemall"
-        android:textColor="@android:color/white"
-        android:visibility="invisible" />
-
     <Button
         android:id="@+id/playagainbutton"
         android:layout_width="match_parent"

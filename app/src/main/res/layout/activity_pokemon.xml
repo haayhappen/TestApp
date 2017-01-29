@@ -163,7 +163,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="149dp"
-        android:text="Hit the pokemon you see as fast as you can!"
+        android:text="Hit the monster you see as fast as you can!"
         android:textColor="@color/common_google_signin_btn_text_light_focused"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
