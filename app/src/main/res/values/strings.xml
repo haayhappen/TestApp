@@ -15,4 +15,12 @@
     <!--Google Ads_ID-->
     <string name="banner_ad_unit_id">ca-app-pub-4970672389873444/3568885213</string>
     <string name="pokemons">Monster</string>
+    <string name="time">Time:</string>
+    <string name="hit_the_monster">Hit the monster you see as fast as you can!</string>
+    <string name="time_remaining">30</string>
+    <string name="score_achieved">0</string>
+    <string name="lifes_counter">3</string>
+    <string name="lifes_textfield">Lifes</string>
+    <string name="score_textfield">Score:</string>
+    <string name="start_game_button">Start Game!</string>
 </resources>
