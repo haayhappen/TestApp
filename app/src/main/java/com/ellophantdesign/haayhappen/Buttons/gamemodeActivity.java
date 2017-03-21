@@ -55,9 +55,6 @@ public class gamemodeActivity extends Activity {
         //## Button IconsBuyButton = (Button) findViewById(R.id.iconsbuybutton);
         //## IconsBuyButton.setVisibility(View.VISIBLE);
 
-        Button IconsButton = (Button) findViewById(R.id.Icons);
-         IconsButton.setVisibility(View.VISIBLE);
-
         //String base64EncodedPublicKey;
         //##String base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxbFAytjwAvYPNkhjbkvqAWpv9Wuy23otQzrLoTrqv3+aAyOc/io0yeMwGOdufDlOF/CTgxvgYDEgBb3swD/hygwuwKr5FnqoGnJWwQuzIZzmFQtT9CfTi4U/45wBiaa8uGuQPXW3kE/3kbtU" + GetMiddleBit() + "U1bEyu1Fx6srZHxe43G0qxeqrhwL1y3e+ccKT+o3HRJs5vDpf+VZHTUP1KU/fj/vZdX6hMO7fP2fILth+iRD7njEB5qwIh0vJVx1iBvwIDAQAB";
 

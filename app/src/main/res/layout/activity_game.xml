@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.49"
                 android:text="Time:"
-                android:textColor="@color/common_google_signin_btn_text_light_focused"
+                android:textColor="@color/common_google_signin_btn_text_light_pressed"
                 android:textSize="20sp" />
 
             <TextView
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.53"
                 android:text="30"
-                android:textColor="@color/common_google_signin_btn_text_light_focused"
+                android:textColor="@color/common_google_signin_btn_text_light_pressed"
                 android:textSize="20sp" />
 
             <TextView
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.27"
                 android:text="Lifes"
-                android:textColor="@color/common_google_signin_btn_text_light_focused"
+                android:textColor="@color/common_google_signin_btn_text_light_pressed"
                 android:textSize="20sp" />
 
             <TextView
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.38"
                 android:text="3"
-                android:textColor="@color/common_google_signin_btn_text_light_focused"
+                android:textColor="@color/common_google_signin_btn_text_light_pressed"
                 android:textSize="20sp" />
 
             <TextView
@@ -65,17 +65,17 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.67"
                 android:text="Score:"
-                android:textColor="@color/common_google_signin_btn_text_light_focused"
+                android:textColor="@color/common_google_signin_btn_text_light_pressed"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/gamescore"
                 android:layout_width="29dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.82"
                 android:text="0"
-                android:textColor="@color/common_google_signin_btn_text_light_focused"
-                android:textSize="20sp"
-                android:layout_weight="0.82" />
+                android:textColor="@color/common_google_signin_btn_text_light_pressed"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -135,12 +135,12 @@
         android:id="@+id/textview_instructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="188dp"
         android:text="Hit the color you see as fast as you can!"
-        android:textColor="@color/common_google_signin_btn_text_light_focused"
-        android:textSize="18sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btn_start_game"

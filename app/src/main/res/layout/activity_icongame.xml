@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.49"
                 android:text="Time:"
-                android:textColor="@color/common_google_signin_btn_text_light_focused"
+                android:textColor="@color/common_google_signin_btn_text_light_pressed"
                 android:textSize="20sp" />
 
             <TextView
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.16"
                 android:text="30"
-                android:textColor="@color/common_google_signin_btn_text_light_focused"
+                android:textColor="@color/common_google_signin_btn_text_light_pressed"
                 android:textSize="20sp" />
 
             <TextView
@@ -47,33 +47,33 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.27"
                 android:text="Lifes"
-                android:textColor="@color/common_google_signin_btn_text_light_focused"
+                android:textColor="@color/common_google_signin_btn_text_light_pressed"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/lifestextview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3"
-                android:textColor="@color/common_google_signin_btn_text_light_focused"
                 android:layout_weight="0.51"
+                android:text="3"
+                android:textColor="@color/common_google_signin_btn_text_light_pressed"
                 android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.42"
                 android:text="Score:"
-                android:textColor="@color/common_google_signin_btn_text_light_focused"
-                android:textSize="20sp"
-                android:layout_weight="0.42" />
+                android:textColor="@color/common_google_signin_btn_text_light_pressed"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/gamescore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:textColor="@color/common_google_signin_btn_text_light_focused"
                 android:layout_weight="0.97"
+                android:text="0"
+                android:textColor="@color/common_google_signin_btn_text_light_pressed"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -82,15 +82,15 @@
             android:id="@+id/screencolor"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginBottom="110dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="100dp"
             android:layout_weight="3"
+            android:adjustViewBounds="true"
             android:background="@android:color/white"
             android:padding="20dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:layout_marginBottom="100dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="100dp" />
+            android:scaleType="fitCenter" />
         <Button
             android:id="@+id/screenbackground"
             android:layout_width="match_parent"
@@ -108,41 +108,41 @@
 
             <Button
                 android:id="@+id/burgerButton"
-                android:layout_weight="1"
-                android:background="@drawable/ic_hamburger"
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp" />
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_hamburger" />
                 <!--android:layout_width="100sp"
                 android:layout_height="100sp" -->
 
 
             <Button
                 android:id="@+id/lettuceButton"
-                android:layout_weight="1"
-                android:background="@drawable/ic_lettuce"
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp" />
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_lettuce" />
 
 
             <Button
                 android:id="@+id/eggButton"
-                android:layout_weight="1"
-                android:background="@drawable/ic_fried_egg"
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp" />
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_fried_egg" />
 
             <Button
                 android:id="@+id/cupcakeButton"
-                android:layout_weight="1"
-                android:background="@drawable/ic_cupcake"
-                android:scaleType="centerInside"
-                android:adjustViewBounds="true"
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp" />
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/ic_cupcake"
+                android:scaleType="centerInside" />
         </LinearLayout>
 
 
@@ -152,24 +152,24 @@
         android:id="@+id/btn_start_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textview_instructions"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:background="@drawable/grey_button_style"
         android:padding="20dp"
         android:text="Start Game!"
-        android:textColor="@color/common_google_signin_btn_text_light_default"
-        android:layout_below="@+id/textview_instructions"
-        android:layout_centerHorizontal="true"
+        android:textColor="@color/common_google_signin_btn_text_light_pressed"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textview_instructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="149dp"
         android:text="Hit the icon you see as fast as you can"
-        android:textColor="@color/common_google_signin_btn_text_light_focused"
-        android:textSize="18sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:textColor="@color/common_google_signin_btn_text_light_pressed"
+        android:textSize="18sp" />
 
 </RelativeLayout>
